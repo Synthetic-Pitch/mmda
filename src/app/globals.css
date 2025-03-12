@@ -1,20 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Koulen&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lakki+Reddy&display=swap');
-
 @import "tailwindcss";
 
-@tailwind utilities;
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+  }
 }
-
-@theme {
-  --color-primary: oklch(75% 0.2 30);
-  --color-secondary: oklch(75% 0.2 30);
-  --font-poppins: "Poppins", sans-serif;
-  --font-koulen: "Koulen", cursive;
-  --font-lakki: "Lakki Reddty", cursive;
+:root{
+  --skyline:cyan;
+}
+@theme inline{
+  --font-lakki:"Lakki Reddy", cursive;
+  --font-poppins:"Poppins",cursive;
+  --font-koulen:"Koulen",cursive;
+  --font-Big-Shoulders-Display:"Big Shoulders Display",cursive;
+  --color-skyline:var(--skyline);
 }
