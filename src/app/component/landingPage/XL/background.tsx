@@ -1,8 +1,9 @@
+import Image from 'next/image';
 import React from 'react';
 
 const Background = () => {
     return (
-        <div className='absolute top-0 bg-[pink] z-0 h-full w-full'>
+        <div className='absolute top-0 z-0 h-full w-full bg-[#2c2c2c]'>
             <section 
                 style={{clipPath:'polygon(0 0, 20% 0, 70% 100%, 0% 100%)'}}
                 className='relative h-full w-[80%] bg-[#94A6FF] z-[2]'
@@ -16,8 +17,8 @@ const Background = () => {
             >
                 
             </section>
-            <section className='absolute top-0 right-0 h-full w-[90%] bg-[rgb(0,128,0)] z-0'>
-            
+            <section className='absolute top-0 right-0 h-full w-[90%] z-0'>
+                <Image src="/assets/images/mmda-background.png" alt='' fill priority className='blur-[4px]'/>
             </section>
         </div>
     );

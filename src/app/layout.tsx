@@ -1,5 +1,6 @@
+import Provider from './redux/ReduxProvider'
 import "./globals.css";
-import { Lakki_Reddy,Poppins,Big_Shoulders_Display,Koulen } from "next/font/google";
+import { Lakki_Reddy,Poppins,Big_Shoulders_Display,Koulen,Kumar_One,Krona_One,Kadwa } from "next/font/google";
 
 
 const lakki = Lakki_Reddy({
@@ -12,7 +13,7 @@ const poppins = Poppins({
   variable: "--font-lakki",
   subsets: ["latin"],
   display: "swap",
-  weight: "400",
+  weight: "300",
 })
 const bigShoulder = Big_Shoulders_Display({
   variable: "--font-big-shoulders-display",
@@ -26,13 +27,38 @@ const koulen =Koulen({
   display: "swap",
   weight: "400",
 })
+const kumarOne = Kumar_One({
+  variable:"--font-kumar-one",
+  subsets:["latin"],
+  weight:"400",
+  display:'swap'
+})
+const kronaOne = Krona_One({
+  variable:"--font-krona-one",
+  subsets:["latin"],
+  weight:"400",
+  display:'swap'
+})
+const kadwa = Kadwa({
+  variable :"--font-kadwa",
+  subsets:["latin"],
+  weight:"400",
+  display:'swap'
+})
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${lakki.variable}${poppins.variable}${bigShoulder.variable}${koulen.variable}antialiased`}>
-        {children}
+      <body 
+        suppressHydrationWarning
+        className={`${lakki.variable}${poppins.variable}${bigShoulder.variable}${koulen.variable}${kumarOne.variable}${kronaOne.variable}${kadwa.variable}antialiased`}>
+        
+
+        <Provider>
+          {children}
+        </Provider>
       </body>
     </html>
   );
