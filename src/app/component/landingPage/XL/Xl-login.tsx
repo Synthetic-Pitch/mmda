@@ -14,7 +14,7 @@ const XlLogin = () => {
             </main>
             <section className='w-full flex items-center justify-center gap-4 select-none'>
                 <div className='h-[2px] w-[30%] bg-black '/>
-                <div>or</div>
+                <div className='font-koulen'>or</div>
                 <div className='h-[2px] w-[30%] bg-black '/>
             </section>
             <footer className='w-full h-[25%] flex justify-center items-center'>
