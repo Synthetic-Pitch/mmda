@@ -5,7 +5,7 @@ import XlLoginPlatform from './Xl-login-platform';
 
 const XlLogin = () => {
     return (
-        <div className='w-[360px] h-[80%] max-h-[500px] py-10 px-6 bg-[rgb(217,217,217,.65)] -mt-[60px] rounded-4xl'>
+        <div className='w-[350px] h-[80%] max-h-[500px] py-10 px-6 bg-[rgb(217,217,217,.65)] -mt-[60px] rounded-4xl'>
             <section className='h-[45%] w-full'>
                 <XlForm/>
             </section>

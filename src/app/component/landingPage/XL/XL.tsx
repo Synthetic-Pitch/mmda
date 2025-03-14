@@ -1,7 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
 import XlButtons from './xl-buttons';
-import XlLogin from './Xl-login';
+import XlCondition from './Xl-condition';
+
 const XL = () => {
     return (
         <div className='relative z-[5] h-full w-full flex flex-col '>
@@ -30,7 +31,7 @@ const XL = () => {
 
                     <div className='absolute h-[130px] w-[130px] bg-[rgb(217,217,217,.22)] bottom-20 left-6 rounded-2xl'/>
                     <div className='h-[300px] w-[300px] bg-[rgb(217,217,217,.22)] absolute bottom-2 left-20 rounded-[40px]'/>
-                
+                    
                     <section className='absolute bottom-6 left-14 flex items-center'>
                         <figure className='relative h-30 w-30 '>
                             <Image draggable={false} src='/assets/images/qr-code.png' alt='' fill/> 
@@ -46,8 +47,8 @@ const XL = () => {
                     </section>
 
                 </aside>
-                <aside className='w-[50%] h-full flex items-center pl-40'>
-                    <XlLogin/>
+                <aside className='w-[50%] h-full flex items-center pl-40 overflow-hidden'>
+                    <XlCondition/>
                 </aside>
             </main>
         </div>
