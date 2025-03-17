@@ -18,7 +18,7 @@ const Background = () => {
                 
             </section>
             <section className='absolute top-0 right-0 h-full w-[90%] z-0'>
-                <Image src="/assets/images/mmda-background.png" alt='' fill priority className='blur-[4px]'/>
+                <Image src="/assets/images/mmda-background.png" draggable={false} alt='' fill priority className='blur-[4px]'/>
             </section>
         </div>
     );

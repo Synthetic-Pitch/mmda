@@ -13,25 +13,38 @@ type State = {
         inputTypeError:{
             username:false,
             password:false
-        }
+        },
+        buttonTrigger:boolean
     }
 }
+
+
 
 const XlForm = () => {
     const inputTypeError = useSelector((state:State)=>state.loginSlice.inputTypeError);
     const credentials = useSelector((state:State)=>state.loginSlice.loginState);
+    const Trigger = useSelector((state:State)=>state.loginSlice.buttonTrigger);
     const dispatch =useDispatch();
-
+    const [empty,setEmpty] = React.useState({
+        usernameEmpty:false,
+        passwordEmpty:false
+    });
+    
     const handleAction =(event:React.FormEvent)=>{
         event.preventDefault();
         console.log('formdata',event.currentTarget);
     }
     
-    useEffect(()=>{
-        console.log(inputTypeError);
-        console.log(credentials);
-    },[credentials])
+    useEffect(() => {
+        //so this is Functional Updater I'd use to check if the username and password is empty
+        setEmpty(() => ({
+            usernameEmpty: credentials.login_username === '',
+            passwordEmpty: credentials.login_password === ''
+        }));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [Trigger]);
     
+
     return (
         <form onSubmit={handleAction} className='w-full h-full flex flex-col justify-evenly items-center gap-2'>
             <section 
@@ -57,8 +70,10 @@ const XlForm = () => {
                         transition={{
                             duration:.2
                         }}
-                        className='absolute -bottom-3 right-1/2 translate-x-1/2 translate-y-1/2 text-[12px] select-none font-kufam text-red-600'
-                    >wrong username</motion.span>
+                        className='absolute -bottom-3 right-1/2 translate-x-1/2 translate-y-1/2 text-[11px] select-none font-kufam text-red-600'
+                    >{
+                        empty.usernameEmpty ? "enter username":"wrong username"
+                    }</motion.span>
                 }
                 
             </section>
@@ -90,8 +105,12 @@ const XlForm = () => {
                         transition={{
                             duration:.2
                         }}
-                        className='absolute -bottom-3 right-1/2 translate-x-1/2 translate-y-1/2 text-[12px] select-none font-kufam text-red-600'
-                    >wrong password</motion.span>
+                        className='absolute -bottom-3 right-1/2 translate-x-1/2 translate-y-1/2 text-[11px] select-none font-kufam text-red-600'
+                    >
+                        {
+                            empty.passwordEmpty ? "enter password":"wrong password"
+                        }                        
+                    </motion.span>
                 }
                 
             </section>

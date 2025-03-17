@@ -2,8 +2,9 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {setcreateAccount} from '@/app/redux/effectSlice'
-import {setTypeError_Username,setTypeError_Password} from '@/app/redux/login'
-import { useRouter } from 'next/navigation';
+import {setTypeError_Username,setTypeError_Password,setBtnTrigger} from '@/app/redux/login'
+
+import { LoginAction } from '@/app/action/login-action'
 
 
 type State = {
@@ -15,41 +16,45 @@ type State = {
         inputTypeError:{
             username:false,
             password:false
-        }
+        },
+      
     }
 }
 
 const XlLoginCreate = () => {
+
     const dispatch = useDispatch();
     const credentials = useSelector((state:State)=>state.loginSlice.loginState);
-    const route = useRouter();
+
+
     const handleCreateAccount = () => {
         dispatch(setcreateAccount());
     }
     
-    const handleLogin = () => {
-        if(credentials.login_username === '' && credentials.login_password === '')return
-        if(credentials.login_username !== 'reymark'){
-            dispatch(setTypeError_Username(true));
-        }else dispatch(setTypeError_Username(false));
+    const handleLogin = async  () => {
+        // check if the username and password is valid thens set setTypeError_Username/setTypeError_Password
 
-        if(credentials.login_password !== 'dequito'){
+        const results = await LoginAction(credentials);
+        if(!results.username){
+            dispatch(setTypeError_Username(true))
+        }else dispatch(setTypeError_Username(false))
+
+        if(!results.password){
             dispatch(setTypeError_Password(true))
-        }else dispatch(setTypeError_Password(false));
-        if(credentials.login_username === 'reymark' && credentials.login_password === 'dequito'){
-            route.push('/test');
-        }
+        } else dispatch(setTypeError_Password(false))
+        
+        dispatch(setBtnTrigger());
     }
 
     return (
         <div className='flex flex-col items-center justify-evenly w-full h-full'>
+
             <button 
                 onClick={handleLogin}
                 className='cursor-pointer font-krona-One text-[12px] hover:underline hover:text-[14px]'>Log in</button>
             <button 
                 onClick={handleCreateAccount}
                 className='cursor-pointer font-krona-One text-[12px] hover:underline hover:text-[14px]'>create account</button>
-           
         </div>
     );
 };

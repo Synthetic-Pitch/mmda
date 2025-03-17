@@ -9,7 +9,8 @@ type State = {
     inputTypeError:{
         username:boolean;
         password:boolean;
-    }
+    },
+    buttonTrigger:boolean
 }
 
 export const initialState : State = {
@@ -20,7 +21,8 @@ export const initialState : State = {
     inputTypeError:{
         username:false,
         password:false
-    }
+    },
+    buttonTrigger:false
 }
 
 export const loginSlice = createSlice({
@@ -39,12 +41,16 @@ export const loginSlice = createSlice({
         setTypeError_Password : (state,action:PayloadAction<boolean>)=>{
             state.inputTypeError.password = action.payload
         },
+        setBtnTrigger : (state)=>{
+            state.buttonTrigger = !state.buttonTrigger
+        }
         
         
     }
 })
 
 export const {
-    setLogin_Username,setLogin_Password,setTypeError_Username,setTypeError_Password
+    setLogin_Username,setLogin_Password,setTypeError_Username,setTypeError_Password,
+    setBtnTrigger
 } = loginSlice.actions
 export default loginSlice.reducer;
