@@ -44,7 +44,7 @@ const XlForm = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [Trigger]);
     
-
+    
     return (
         <form onSubmit={handleAction} className='w-full h-full flex flex-col justify-evenly items-center gap-2'>
             <section 
@@ -54,10 +54,7 @@ const XlForm = () => {
                 <input 
                     type="text" id='usernameinput' autoComplete='off'
                     value={credentials.login_username}
-                    onChange={(e)=>{
-                        const val = e.target.value;
-                        dispatch(setLogin_Username(val))
-                    }}
+                    onChange={(e)=>dispatch(setLogin_Username(e.target.value.trim()))}
                     className=' w-full h-full py-2 px-4 rounded-xl font-poppins text-sm'/>
 
                 {   inputTypeError.username &&
@@ -88,10 +85,7 @@ const XlForm = () => {
                     name='login-password'
                     type="text" id='passwordinput' autoComplete='off' 
                     value={credentials.login_password}
-                    onChange={(e)=>{
-                        const val = e.target.value;
-                        dispatch(setLogin_Password(val))
-                    }}
+                    onChange={(e)=>dispatch(setLogin_Password(e.target.value.trimEnd()))}
                     className=' w-full h-full py-2 px-4 rounded-xl font-poppins text-sm'/>
                 
                 {

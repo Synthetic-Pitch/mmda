@@ -9,7 +9,7 @@ export async function POST(request: NextRequest){
         const Username = body.get('username');
         const Password = body.get('password');
         const Gmail = body.get('gmail')
-
+        
         const dbPost = await User.create({
             username:Username,
             password:Password,

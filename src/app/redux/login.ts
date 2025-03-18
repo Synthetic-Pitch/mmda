@@ -10,7 +10,12 @@ type State = {
         username:boolean;
         password:boolean;
     },
-    buttonTrigger:boolean
+    buttonTrigger:boolean,
+    createAccount:{
+        create_username:string;
+        create_password:string;
+        create_gmail:string;
+    }
 }
 
 export const initialState : State = {
@@ -22,10 +27,16 @@ export const initialState : State = {
         username:false,
         password:false
     },
-    buttonTrigger:false
+    buttonTrigger:false,
+    createAccount:{
+        create_username:'',
+        create_password:'',
+        create_gmail:'',
+    }
 }
 
 export const loginSlice = createSlice({
+
     name:'login',
     initialState,
     reducers:{
@@ -43,14 +54,24 @@ export const loginSlice = createSlice({
         },
         setBtnTrigger : (state)=>{
             state.buttonTrigger = !state.buttonTrigger
+        },
+        setCreate_Username:(state,action:PayloadAction<string>)=>{
+            state.createAccount.create_username = action.payload
+        },
+        setCreate_Password:(state,action:PayloadAction<string>)=>{
+            state.createAccount.create_password = action.payload
+        },
+        setCreate_Gmail : (state,action:PayloadAction<string>)=>{
+            state.createAccount.create_gmail = action.payload;
         }
-        
         
     }
 })
 
 export const {
+
     setLogin_Username,setLogin_Password,setTypeError_Username,setTypeError_Password,
-    setBtnTrigger
+    setBtnTrigger,setCreate_Username,setCreate_Password,setCreate_Gmail
+
 } = loginSlice.actions
 export default loginSlice.reducer;

@@ -14,6 +14,7 @@ const MongoDbConnect = async () => {
       console.log("Using existing MongoDB connection");
       return;
     }
+    
     // If we get here, the connection is dead, so we'll make a new one
     cachedConnection = null;
   }
