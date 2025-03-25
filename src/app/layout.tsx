@@ -1,6 +1,7 @@
 import Provider from './redux/ReduxProvider'
 import "./globals.css";
 import { Lakki_Reddy,Poppins,Big_Shoulders_Display,Koulen,Kumar_One,Krona_One,Kadwa,Kufam } from "next/font/google";
+import SessionProvider from './authProvider/sessionProvider';
 
 const lakki = Lakki_Reddy({
   variable: "--font-lakki",
@@ -60,10 +61,12 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${lakki.variable}${poppins.variable}${bigShoulder.variable}${koulen.variable}${kumarOne.variable}${kronaOne.variable}${kadwa.variable}${kufam.variable}antialiased`}>
         
-
-        <Provider>
-          {children}
-        </Provider>
+        <SessionProvider>
+          <Provider>
+            {children}
+          </Provider>
+        </SessionProvider>
+        
       </body>
     </html>
   );
