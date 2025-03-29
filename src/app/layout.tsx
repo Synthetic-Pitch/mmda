@@ -52,6 +52,7 @@ const kufam = Kufam({
   display:'swap'
 })
 
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
