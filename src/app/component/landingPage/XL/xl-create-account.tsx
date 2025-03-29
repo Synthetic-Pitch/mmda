@@ -76,7 +76,7 @@ const XlCreateAccount = () => {
         <div className='w-[350px] h-[80%] max-h-[500px] py-10 px-6 bg-[rgb(217,217,217,.65)] -mt-[60px] rounded-4xl flex flex-col'>
 
             <main className='h-[70%] w-full flex flex-col justify-evenly'>
-                <section className='w-full h-[25%] border-2 rounded-full relative flex justify-center'>
+                <section className='w-full h-[25%] border-2 border-black rounded-full relative flex justify-center'>
                     <input 
                         value={create.create_username} autoComplete='off'
                         onChange={(e)=>dispatch(setCreate_Username(e.target.value.trim()))}
@@ -99,7 +99,7 @@ const XlCreateAccount = () => {
                     
                 </section>
                 
-                <section className='w-full h-[25%] border-2 rounded-full relative flex justify-center'>
+                <section className='w-full h-[25%] border-2 border-black rounded-full relative flex justify-center'>
                     <input 
                         value={create.create_password}  autoComplete='off'
                         onChange={(e)=>dispatch(setCreate_Password(e.target.value.trim()))}
@@ -123,7 +123,7 @@ const XlCreateAccount = () => {
 
                 </section>
 
-                <section className='w-full h-[25%] border-2 rounded-full relative flex justify-center'>
+                <section className='w-full h-[25%] border-2 border-black rounded-full relative flex justify-center'>
                     <input 
                         value={create.create_gmail}  autoComplete='off'
                         onChange={(e)=>dispatch(setCreate_Gmail(e.target.value.trim()))}
