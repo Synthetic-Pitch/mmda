@@ -1,6 +1,6 @@
 import Provider from './redux/ReduxProvider'
 import "./globals.css";
-import { Lakki_Reddy,Poppins,Big_Shoulders_Display,Koulen,Kumar_One,Krona_One,Kadwa,Kufam } from "next/font/google";
+import { Lakki_Reddy,Poppins,Big_Shoulders_Display,Koulen,Kumar_One,Krona_One,Kadwa,Kufam,Poor_Story } from "next/font/google";
 import SessionProvider from './authProvider/sessionProvider';
 
 const lakki = Lakki_Reddy({
@@ -51,7 +51,12 @@ const kufam = Kufam({
   weight:"400",
   display:'swap'
 })
-
+const poorStory = Poor_Story({
+  variable:"--font-poor-story",
+  subsets:["latin"],
+  weight:"400",
+  display:'swap'
+})
 
 export default function RootLayout({
   children,
@@ -60,7 +65,7 @@ export default function RootLayout({
     <html lang="en">
       <body 
         suppressHydrationWarning
-        className={`${lakki.variable}${poppins.variable}${bigShoulder.variable}${koulen.variable}${kumarOne.variable}${kronaOne.variable}${kadwa.variable}${kufam.variable}antialiased`}>
+        className={`${lakki.variable}${poppins.variable}${bigShoulder.variable}${koulen.variable}${kumarOne.variable}${kronaOne.variable}${kadwa.variable}${kufam.variable}${poorStory.variable}antialiased`}>
         
         <SessionProvider>
           <Provider>
