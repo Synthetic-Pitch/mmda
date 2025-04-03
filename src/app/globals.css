@@ -3,6 +3,13 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@font-face{
+ src: url('../../public/assets/fonts/postnobillscolombo-regular.woff2');
+  font-family: 'markdown';
+  font-style: normal;
+  display: swap;
+  font-weight: 500;
+}
 @layer base {
   * {
     margin: 0;
@@ -46,7 +53,10 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 }
+
+
 @theme inline{
+  --font-markdown:'markdown', sans-serif;
   --font-lakki:"Lakki Reddy", cursive;
   --font-poppins:"Poppins",cursive;
   --font-koulen:"Koulen",cursive;
@@ -56,6 +66,8 @@
   --font-kadwa:"Kadwa",cursive;
   --font-kufam:"Kufam",cursive;
   --font-poorStory:"Poor Story",cursive;
+  --font-port-lligat-slab:"Port Lligat Slab",cursive;
+  
   --color-skyline:var(--skyline);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);

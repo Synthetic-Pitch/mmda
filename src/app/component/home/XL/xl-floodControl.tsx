@@ -8,9 +8,10 @@ import img3 from '../../../../../public/assets/images/floodcontrol3.png'
 
 
 const XlFloodControl = () => {
+    
     return (
         <div className='bg-[#D0D8FF] flex-grow flex justify-center'>
-            <main className='w-full max-w-[2000px] h-full flex justify-center items-center'>
+            <main className='w-full max-w-[2000px] h-full flex justify-center items-center py-10'>
                 <article className='h-[90%] w-[45%] space-y-[10%] select-none flex flex-col'>
                     <h1 className='text-4xl font-poppins font-black' style={{fontWeight:'900'}}>Flood control Projects</h1>
                     <p className='font-poppins w-[80%] text-xl'>

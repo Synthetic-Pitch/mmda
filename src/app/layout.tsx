@@ -1,6 +1,7 @@
 import Provider from './redux/ReduxProvider'
 import "./globals.css";
-import { Lakki_Reddy,Poppins,Big_Shoulders_Display,Koulen,Kumar_One,Krona_One,Kadwa,Kufam,Poor_Story } from "next/font/google";
+import { Lakki_Reddy,Poppins,Big_Shoulders_Display,Koulen,Kumar_One,Krona_One,Kadwa,Kufam,Poor_Story,Port_Lligat_Slab } from "next/font/google";
+
 import SessionProvider from './authProvider/sessionProvider';
 
 const lakki = Lakki_Reddy({
@@ -13,7 +14,7 @@ const poppins = Poppins({
   variable: "--font-lakki",
   subsets: ["latin"],
   display: "swap",
-  weight: "300",
+  weight: "600",
 })
 const bigShoulder = Big_Shoulders_Display({
   variable: "--font-big-shoulders-display",
@@ -57,6 +58,13 @@ const poorStory = Poor_Story({
   weight:"400",
   display:'swap'
 })
+const portlingab = Port_Lligat_Slab ({
+  variable:"--font-port-lligat-slab",
+  subsets:["latin"],
+  weight:"400",
+  display:'swap'
+})
+
 
 export default function RootLayout({
   children,
@@ -65,14 +73,16 @@ export default function RootLayout({
     <html lang="en">
       <body 
         suppressHydrationWarning
-        className={`${lakki.variable}${poppins.variable}${bigShoulder.variable}${koulen.variable}${kumarOne.variable}${kronaOne.variable}${kadwa.variable}${kufam.variable}${poorStory.variable}antialiased`}>
-        
+        className={`
+          ${lakki.variable} ${poppins.variable} ${bigShoulder.variable} ${koulen.variable}
+          ${kumarOne.variable} ${kronaOne.variable} ${kadwa.variable} ${kufam.variable} 
+          ${poorStory.variable}${portlingab.variable} antialiased`}
+      >
         <SessionProvider>
           <Provider>
             {children}
           </Provider>
         </SessionProvider>
-        
       </body>
     </html>
   );
