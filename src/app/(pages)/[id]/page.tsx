@@ -4,6 +4,7 @@ import XlFloodControl from '@/app/component/home/XL/xl-floodControl';
 import XlHeader from '@/app/component/home/XL/xl-header';
 import XlNavigation from '@/app/component/home/XL/xl-navigation';
 import XlTodaysCoding from '@/app/component/home/XL/xl-todaysCoding';
+import XlTrafficRoads from '@/app/component/home/XL/xl-trafficRoads';
 import React from 'react';
 
 const Home = () => {
@@ -16,8 +17,10 @@ const Home = () => {
                     <XlNavigation/>
                     <XlFloodControl/>
                 </figure>
-                <figure className='flex flex-col h-[100vh] max-h-[1500px]'>
+                <figure className='min-h-screen relative'>
                     <XlTodaysCoding/>
+                    <div className='sticky h-[400px] w-full '/>
+                    <XlTrafficRoads/>
                 </figure>
                 
             </section>

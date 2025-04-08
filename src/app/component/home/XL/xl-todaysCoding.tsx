@@ -105,21 +105,16 @@ const XlTodaysCoding = () => {
     }, [isInView]);
 
     return (
-        <div 
- 
-
-            className='bg-[#D0D8FF] h-full w-full flex justify-center'>
-            <main className='h-full w-full max-w-[2000px] flex flex-col'>
+        <div ref={ref}
+            className='bg-[#D0D8FF] min-h-screen w-full flex justify-center sticky top-0 '>
+            <main className='min-h-screen w-full max-w-[2000px] flex flex-col'>
                 <header>
                     <h2 className='text-center font-poppins text-3xl font-extrabold text-[#94A6FF] py-10 select-none'>
                         TODAY&apos;S CODING
                     </h2>
                 </header>
                 
-                <motion.div
-                    ref={ref}
-
-                >
+                <motion.div>
                     <Card
                         
                         className='w-[260px] h-[140px] ml-20 bg-[#9F9F9F] border-none flex justify-center items-center select-none'
@@ -137,7 +132,6 @@ const XlTodaysCoding = () => {
                     </Card>
                 </motion.div>
                 
-
                 <section className='flex justify-evenly h-[170px] py-4 select-none'>
                     {   
                         Coding.map((item,index)=>(

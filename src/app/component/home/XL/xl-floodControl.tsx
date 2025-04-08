@@ -8,7 +8,7 @@ import img3 from '../../../../../public/assets/images/floodcontrol3.png'
 
 
 const XlFloodControl = () => {
-    
+            
     return (
         <div className='bg-[#D0D8FF] flex-grow flex justify-center'>
             <main className='w-full max-w-[2000px] h-full flex justify-center items-center py-10'>

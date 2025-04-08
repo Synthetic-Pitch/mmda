@@ -14,7 +14,7 @@ const poppins = Poppins({
   variable: "--font-lakki",
   subsets: ["latin"],
   display: "swap",
-  weight: "600",
+  weight: "400",
 })
 const bigShoulder = Big_Shoulders_Display({
   variable: "--font-big-shoulders-display",
