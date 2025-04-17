@@ -53,14 +53,13 @@ const XlLoginCreate = () => {
     }
     
     return (
-        <div className='flex flex-col items-center justify-evenly w-full h-full'>
-
+        <div className='relative flex flex-col items-center justify-evenly w-full h-full '>
             <button 
                 onClick={handleLogin}
-                className='cursor-pointer font-krona-One text-[12px] hover:underline hover:text-[14px]'>Log in</button>
+                className='cursor-pointer font-krona-One text-[10px] hover:underline hover:text-[12px]'>Log in</button>
             <button 
                 onClick={handleCreateAccount}
-                className='cursor-pointer font-krona-One text-[12px] hover:underline hover:text-[14px]'>create account</button>
+                className='cursor-pointer font-krona-One text-[10px] hover:underline hover:text-[12px] z-1'>create account</button>
         </div>
     );
 };

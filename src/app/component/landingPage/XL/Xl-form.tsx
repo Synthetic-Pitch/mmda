@@ -46,11 +46,11 @@ const XlForm = () => {
     
     
     return (
-        <form onSubmit={handleAction} className='w-full h-full flex flex-col justify-evenly items-center gap-2'>
+        <form onSubmit={handleAction} className='w-full h-full flex flex-col justify-evenly items-center gap-4'>
             <section 
-                className='h-[35%] max-h[200px] w-full  border-2 border-black rounded-full relative'
+                className='h-[40%] max-h[200px] w-full  border-1 border-black rounded-full relative'
             >
-                <label htmlFor="usernameinput" className='absolute top-1 left-5 -mt-4 bg-[#222222] text-white text-[12px] rounded-xl px-3 select-none'>username</label>
+                <label htmlFor="usernameinput" className='absolute top-1 left-5 -mt-4 bg-[#222222] text-white text-[10px] rounded-xl px-3 select-none'>username</label>
                 <input 
                     type="text" id='usernameinput' autoComplete='off'
                     value={credentials.login_username}
@@ -76,18 +76,17 @@ const XlForm = () => {
             </section>
                     
             <section
-                className='h-[35%] max-h[200px] w-full  border-2 border-black rounded-full relative'
+                className='h-[40%] max-h[200px] w-full  border-1 border-black rounded-full relative'
             >
                 <label 
                     htmlFor='passwordinput'
-                    className='absolute top-1 left-5 -mt-4 bg-[#222222] text-white text-[12px] rounded-xl px-3 select-none'>password</label>
+                    className='absolute top-1 left-5 -mt-4 bg-[#222222] text-white text-[10px] rounded-xl px-3 select-none'>password</label>
                 <input 
                     name='login-password'
                     type="text" id='passwordinput' autoComplete='off' 
                     value={credentials.login_password}
                     onChange={(e)=>dispatch(setLogin_Password(e.target.value.trimEnd()))}
                     className=' w-full h-full py-2 px-4 rounded-xl font-poppins text-sm'/>
-                
                 {
                     inputTypeError.password && 
                     <motion.span

@@ -73,15 +73,15 @@ const XlCreateAccount = () => {
     }
     
     return (
-        <div className='w-[350px] h-[80%] max-h-[500px] py-10 px-6 bg-[rgb(217,217,217,.65)] -mt-[60px] rounded-4xl flex flex-col'>
+        <div className='w-[350px] h-[80%] max-h-[500px] py-8 px-6 bg-[rgb(217,217,217,.65)] -mt-[60px] rounded-4xl flex flex-col'>
 
-            <main className='h-[70%] w-full flex flex-col justify-evenly'>
-                <section className='w-full h-[25%] border-2 border-black rounded-full relative flex justify-center'>
+            <main className='h-[80%] w-full flex flex-col justify-evenly'>
+                <section className='w-full h-[22%] border-1 border-black rounded-full relative flex justify-center'>
                     <input 
                         value={create.create_username} autoComplete='off'
                         onChange={(e)=>dispatch(setCreate_Username(e.target.value.trim()))}
                         type="text" 
-                        className='w-full h-full  px-4 font-poppins placeholder:text-black placeholder:text-sm' placeholder='username' />
+                        className='w-full h-full  px-4 font-poppins placeholder:text-black placeholder:text-[12px]' placeholder='username' />
                     {
                         status.emptyUsername && 
                         <motion.span 
@@ -93,18 +93,18 @@ const XlCreateAccount = () => {
                             transition={{
                                 duration:0.2
                             }}
-                            className='absolute top-[100%] text-sm text-[red]'>enter username
+                            className='absolute top-[100%] text-[12px] text-[blue]'>enter username
                         </motion.span>
                     }
                     
                 </section>
                 
-                <section className='w-full h-[25%] border-2 border-black rounded-full relative flex justify-center'>
+                <section className='w-full h-[22%] border-1 border-black rounded-full relative flex justify-center'>
                     <input 
                         value={create.create_password}  autoComplete='off'
                         onChange={(e)=>dispatch(setCreate_Password(e.target.value.trim()))}
                         type="text" 
-                        className='w-full h-full  px-4 font-poppins placeholder:text-black placeholder:text-sm' placeholder='password' />
+                        className='w-full h-full  px-4 font-poppins placeholder:text-black placeholder:text-[12px]' placeholder='password' />
 
                     {
                         status.emptyPassword &&
@@ -117,18 +117,18 @@ const XlCreateAccount = () => {
                             transition={{
                                 duration:0.2
                             }}
-                            className='absolute top-[100%] text-sm text-[red]'>enter username
+                            className='absolute top-[100%] text-[12px] text-[red]'>enter username
                         </motion.span>
                     }
 
                 </section>
 
-                <section className='w-full h-[25%] border-2 border-black rounded-full relative flex justify-center'>
+                <section className='w-full h-[22%] border-1 border-black rounded-full relative flex justify-center'>
                     <input 
                         value={create.create_gmail}  autoComplete='off'
                         onChange={(e)=>dispatch(setCreate_Gmail(e.target.value.trim()))}
                         type="text" 
-                        className='w-full h-full  px-4 font-poppins placeholder:text-black placeholder:text-sm' placeholder='gmail' />
+                        className='w-full h-full  px-4 font-poppins placeholder:text-black placeholder:text-[12px]' placeholder='gmail' />
                     {   
                         status.emptyGmail &&
                         <motion.span 
@@ -140,7 +140,7 @@ const XlCreateAccount = () => {
                             transition={{
                                 duration:0.2
                             }}
-                            className='absolute top-[100%] text-sm text-[red]'>enter username
+                            className='absolute top-[100%] text-[12px] text-[red]'>enter username
                         </motion.span>
                     }
                 </section>
