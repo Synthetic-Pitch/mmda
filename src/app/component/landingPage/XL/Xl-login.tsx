@@ -20,7 +20,7 @@ const XlLogin = () => {
                 <div className='h-[2px] w-[30%] bg-black '/>
             </section>
 
-            <footer className='w-full h-[20%] flex justify-center items-center'>
+            <footer className='w-full h-[25%] flex justify-center items-center'>
                 <XlLoginPlatform/>
             </footer>
         </div>

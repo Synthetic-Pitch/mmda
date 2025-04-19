@@ -19,7 +19,7 @@ const Home = () => {
                 </figure>
                 <figure className='min-h-screen relative'>
                     <XlTodaysCoding/>
-                    <div className='sticky h-[400px] w-full '/>
+                    <div className='h-[400px]'/>
                     <XlTrafficRoads/>
                 </figure>
                 

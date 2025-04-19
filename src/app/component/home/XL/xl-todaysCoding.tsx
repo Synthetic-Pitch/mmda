@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { motion} from 'framer-motion';
 import {setTodaysCoding} from '@/app/redux/home';
 
-
 type State = {
     homeSlice:{
         todaysCoding : boolean
@@ -154,7 +153,7 @@ const XlTodaysCoding = () => {
                         <table className='w-[70%] h-[80%] font-poppins font-light select-none'>
                             <thead>
                                 <tr className='text-center'>
-                                    <th className='w-full text-7xl font-markdown font-extrabold text-[#8BA57B]' colSpan={3}>MAJOR ROADS</th>
+                                    <th className='w-full text-5xl font-markdown font-extrabold text-[#8BA57B]' colSpan={3}>MAJOR ROADS</th>
                                 </tr>
                             </thead>
                             <tbody>

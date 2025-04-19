@@ -6,7 +6,7 @@ const XlButtons = () => {
     const route = useRouter();
     
     return (
-        <>
+        <div className='text-[2vh] flex gap-6'>
             <button 
                 className='cursor-pointer font-kadwa' onClick={()=>route.push('/impound-info')}>impound info
             </button>
@@ -22,7 +22,7 @@ const XlButtons = () => {
             <button 
                 className='cursor-pointer font-kadwa' onClick={()=>route.push('/about-us')}>about us
             </button>
-        </>
+        </div>
     );
 };
 
