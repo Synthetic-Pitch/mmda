@@ -14,7 +14,7 @@ const Page = () => {
             </section>
         
             <section 
-                className='hidden lg:flex flex-col h-screen max-h-[1500px relative'
+                className='hidden lg:flex flex-col h-screen max-h-[1500px] relative'
             >
                 <div 
                     style={{clipPath:'polygon(0% 89%, 15% 83%, 33% 89%, 60% 77%, 71% 95%, 100% 66%, 100% 100%, 0% 100%)',height:'700px',width:'100%',bottom:'100%',position:'absolute'}}
