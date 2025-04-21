@@ -1,10 +1,54 @@
-import React from 'react';
+'use client'
+import React, { useEffect, useRef, useState } from 'react';
 import { FaCar } from "react-icons/fa";
 import { GoDotFill } from "react-icons/go";
-
+import { useDispatch, useSelector } from 'react-redux';
+import {setTrafficRoads} from '@/app/redux/home'
+type State = {
+    homeSlice:{
+        trafficRoads:boolean
+    }
+}
 
 const XlTrafficRoads = () => {
+    const trafficRoads = useSelector((state:State)=>state.homeSlice.trafficRoads);
+    const ref = useRef<HTMLDivElement>(null)
+    const dispatch = useDispatch();
+    const [isInView, setIsInView] = useState(false);
+
+    useEffect(()=>{
+        if(!ref)return;
+
+        if(trafficRoads){
+            ref.current?.scrollIntoView({behavior:'smooth'})
+        }
+    },[trafficRoads])
+
+     useEffect(()=>{
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsInView(entry.isIntersecting);
+            },
+            { threshold: 0.5 } // Adjust threshold as needed
+        );
+        if (ref.current) {
+            observer.observe(ref.current);
+        }
+
+        return () => {
+            if (ref.current) {
+                observer.unobserve(ref.current);
+            }
+        };
+    },[]);
     
+     useEffect(() => {
+        if(!isInView){
+            dispatch(setTrafficRoads(false));
+        }
+    }, [isInView]);
+
+
     const redRoads = [
         'España Boulevard','Katipunan Avenue','Gil Puyat Avenue (Buendia)',
         'Recto Avenue','Araneta Avenue'
@@ -18,9 +62,9 @@ const XlTrafficRoads = () => {
         'Magsaysay Boulevard','Ortigas Avenue','Commonwealth Avenue',
         'Ayala Avenue','General Luis Street'
     ];
-
+    
     return (
-        <div className='bg-[#EBEBEB] min-h-screen sticky'>
+        <div className='bg-[#EBEBEB] min-h-screen sticky' ref={ref}>
             <main className='absolute inset-0 max-w-[2000px] m-auto'>
                 <header className='relative h-[20%] flex items-center px-20'>
                     <FaCar size={60} className=''/>

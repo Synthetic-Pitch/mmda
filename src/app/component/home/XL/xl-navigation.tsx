@@ -1,7 +1,7 @@
 'use client'
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import {setTodaysCoding} from '@/app/redux/home';
+import {setTodaysCoding,setTrafficRoads} from '@/app/redux/home';
 
 const XlNavigation = () => {
     const dispatch = useDispatch();
@@ -21,6 +21,7 @@ const XlNavigation = () => {
                 </section>
                 
                 <section  
+                    onClick={()=>dispatch(setTrafficRoads(true))}
                     className='w-[23%] h-[70%] bg-[#CECECE] rounded-xl flex items-center  justify-center cursor-pointer hover:border-2 hover:border-white hover:text-xl transition-all shadow-[4px_4px_4px_rgba(0,0,0,.5)] select-none'>
                     traffic  roads
                 </section>
