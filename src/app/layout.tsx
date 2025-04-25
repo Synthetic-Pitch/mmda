@@ -1,6 +1,6 @@
 import Provider from './redux/ReduxProvider'
 import "./globals.css";
-import { Lakki_Reddy,Poppins,Big_Shoulders_Display,Koulen,Kumar_One,Krona_One,Kadwa,Kufam,Poor_Story,Port_Lligat_Slab, Jura, Protest_Strike } from "next/font/google";
+import { Lakki_Reddy,Poppins,Big_Shoulders_Display,Koulen,Kumar_One,Krona_One,Kadwa,Kufam,Poor_Story,Port_Lligat_Slab, Jura, Protest_Strike, Just_Another_Hand, Karantina } from "next/font/google";
 
 import SessionProvider from './authProvider/sessionProvider';
 
@@ -76,6 +76,18 @@ const proteststrike = Protest_Strike({
   weight:"400",
   display:"swap"
 })
+const justanotherhand =Just_Another_Hand({
+  variable:'--font-justanother-hand',
+  subsets:["latin"],
+  weight:'400',
+  display:'swap'
+})
+const karantina = Karantina({
+  variable:'--font-karantina',
+  subsets:['latin'],
+  weight:'400',
+  display:'swap'
+})
 
 export default function RootLayout({
   children,
@@ -87,7 +99,9 @@ export default function RootLayout({
         className={`
           ${lakki.variable} ${poppins.variable} ${bigShoulder.variable} ${koulen.variable}
           ${kumarOne.variable} ${kronaOne.variable} ${kadwa.variable} ${kufam.variable} 
-          ${poorStory.variable}${portlingab.variable}${jura.variable}${proteststrike.variable} antialiased`}
+          ${poorStory.variable}${portlingab.variable}${jura.variable}${proteststrike.variable}
+          ${justanotherhand.variable} ${karantina.variable}
+          antialiased`}
       >
         <SessionProvider>
           <Provider>

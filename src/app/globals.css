@@ -69,7 +69,9 @@
   --font-port-lligat-slab:"Port Lligat Slab",cursive;
   --font-jura:"Jura",cursive;
   --font-protest-strike:"Protest Strike",cursive;
-
+  --font-justanother-hand:"Just Another Hand",cursive;
+  --font-karantina:'Karantina',cursive;
+  
   --color-skyline:var(--skyline);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
