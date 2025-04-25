@@ -9,13 +9,13 @@ const Dashboard = () => {
             <button className='text-sm text-white cursor-pointer' onClick={()=>route.push('/home')}>
                 home 
             </button>
-            <button className='text-sm text-white cursor-pointer'>
-                about
+            <button className='text-sm text-white cursor-pointer' onClick={()=>route.push('/about-us')}>
+                about-us
             </button>
-            <button className='text-sm text-white cursor-pointer'>
+            <button className='text-sm text-white cursor-pointer' onClick={()=>route.push('/FAQs')}>
                 FAQs
             </button>
-            <button className='text-sm text-white cursor-pointer'>
+            <button className='text-sm text-white cursor-pointer' onClick={()=>route.push('/contact-us')}>
                 contact-us
             </button>
         </div>

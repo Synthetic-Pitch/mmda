@@ -26,7 +26,7 @@ const Section = () => {
       const ratio = (count - 40) / (70 - 40);
       setPercentage(100 - ratio * 100);
     }
-    console.log(Math.round(percentage));
+
   }, [count]);  
   
   return (
@@ -42,9 +42,9 @@ const Section = () => {
           style={{clipPath:'polygon(100% 0, 0% 100%, 100% 100%)'}}
         />
         <figure
-          className='relative w-full max-w-[1500px] '
+          className='relative h-full w-full max-w-[1500px] flex items-center'
         >
-          <Image src={Img1} alt='' width={600} height={500} className='relative z-20'/>
+          <Image src={Img1} alt='' width={700} height={600} className='relative z-20'/>
         </figure>
       </section>
       
@@ -56,7 +56,7 @@ const Section = () => {
         <figure
           className='relative w-full max-w-[1500px] flex justify-end'
         >
-          <Image src={Img2} alt='' width={600} height={500} className='relative z-20'/>
+          <Image src={Img2} alt='' width={700} height={600} className='relative z-20'/>
         </figure>
       </section>
     </div>
