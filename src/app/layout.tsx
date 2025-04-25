@@ -1,6 +1,6 @@
 import Provider from './redux/ReduxProvider'
 import "./globals.css";
-import { Lakki_Reddy,Poppins,Big_Shoulders_Display,Koulen,Kumar_One,Krona_One,Kadwa,Kufam,Poor_Story,Port_Lligat_Slab, Jura } from "next/font/google";
+import { Lakki_Reddy,Poppins,Big_Shoulders_Display,Koulen,Kumar_One,Krona_One,Kadwa,Kufam,Poor_Story,Port_Lligat_Slab, Jura, Protest_Strike } from "next/font/google";
 
 import SessionProvider from './authProvider/sessionProvider';
 
@@ -70,6 +70,12 @@ const jura = Jura ({
   weight:"400",
   display:'swap'
 })
+const proteststrike = Protest_Strike({
+  variable:"--font-protest-strike",
+  subsets:["latin"],
+  weight:"400",
+  display:"swap"
+})
 
 export default function RootLayout({
   children,
@@ -81,7 +87,7 @@ export default function RootLayout({
         className={`
           ${lakki.variable} ${poppins.variable} ${bigShoulder.variable} ${koulen.variable}
           ${kumarOne.variable} ${kronaOne.variable} ${kadwa.variable} ${kufam.variable} 
-          ${poorStory.variable}${portlingab.variable}${jura.variable} antialiased`}
+          ${poorStory.variable}${portlingab.variable}${jura.variable}${proteststrike.variable} antialiased`}
       >
         <SessionProvider>
           <Provider>

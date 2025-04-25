@@ -24,7 +24,7 @@ const XlTrafficRoads = () => {
         }
     },[trafficRoads])
 
-     useEffect(()=>{
+    useEffect(()=>{
         const observer = new IntersectionObserver(
             ([entry]) => {
                 setIsInView(entry.isIntersecting);
@@ -41,7 +41,7 @@ const XlTrafficRoads = () => {
             }
         };
     },[]);
-    
+
      useEffect(() => {
         if(!isInView){
             dispatch(setTrafficRoads(false));
