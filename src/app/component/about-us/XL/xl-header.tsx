@@ -10,7 +10,7 @@ const XlHeader = () => {
             <main className='flex gap-8 select-none'>
                 <h2 className='cursor-pointer font-kadwa text-sm text-[white]' onClick={()=>route.push('/home')}>home</h2>
                 <h2 className='cursor-pointer font-kadwa text-sm text-[white]' onClick={()=>route.push('/impound-info')}>impound info</h2>
-                <h2 className='cursor-pointer font-kadwa text-sm text-[white]' onClick={()=>route.push('/FAQs')}>FAQs</h2>
+                <h2 className='cursor-pointer font-kadwa text-sm text-[white]' onClick={()=>route.push('/faqs')}>FAQs</h2>
                 <h2 className='cursor-pointer font-kadwa text-sm text-[white]' onClick={()=>route.push('/contact-us')}>contact us</h2>
             </main>
         </div>
