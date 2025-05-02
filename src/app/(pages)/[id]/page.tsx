@@ -8,7 +8,7 @@ import XlTrafficRoads from '@/app/component/home/XL/xl-trafficRoads';
 import React from 'react';
 
 const Home = () => {
-
+    
     return (
         <div>
             <section className='hidden lg:block'>
