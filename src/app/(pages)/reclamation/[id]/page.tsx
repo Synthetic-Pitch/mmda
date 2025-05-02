@@ -1,12 +1,9 @@
 import React from 'react';
 
-interface PageProps{
-    params: {id:string}
-}
 
-const Page = ({params}:PageProps) => {
-    const {id} = params;
-
+const Page =async  ({params}:{params:Promise<{id:string}>}) => {
+    
+    const {id} = await params;
     // const Pages = [
     //     {
     //         step:"STEP 1",
@@ -28,7 +25,7 @@ const Page = ({params}:PageProps) => {
 
     return (
         <div>
-           {id}
+          ID :{id}
         </div>
     );
 };
