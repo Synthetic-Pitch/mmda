@@ -6,7 +6,7 @@ const Page = async  ({params}:{params:Promise<{id:string}>}) => {
     
     const { id } = await params;
     const parsedId = parseInt(id, 10);
-
+    
     if(parsedId === 0 || parsedId > 4){
         console.log('hey');
         return <RouteNotfound/>
@@ -27,9 +27,9 @@ const Page = async  ({params}:{params:Promise<{id:string}>}) => {
         },
         {
             step:"STEP 4",
-            description:"valid Driver&apos;s License"
+            description:"valid Driver's License"
         }
-    ]
+    ];
     
     return (
         <div className='h-screen bg-[#94A6FF] flex justify-center items-center relative'>
