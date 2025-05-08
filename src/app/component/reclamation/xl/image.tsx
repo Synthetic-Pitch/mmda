@@ -1,36 +1,31 @@
 'use client'
-import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
-
+import React, { useState } from 'react';
+import { submitForm } from '@/app/action/sumitform';
 type Props = {
     param:number
 }
 
 const ImageImport = ({param}:Props) => {
-    const [file,setFile] = useState(null);
-    const [imageURL,setimageURL] = useState<string>('');
+    
+    const [data,setData] = useState<string>('');
 
-    const submitFile = ( event ) => {
-        const file = event.target.files[0]
-        const URLs = URL.createObjectURL(file)
-        setFile(file);
-        setimageURL(URLs);
+    const handleSubmit = async ()=>{
+        event?.preventDefault();
+        try{
+            const e: string = 'hello'; 
+            submitForm({e});
+        }
+        catch(err){
+            console.error(err); console.log(err);
+        }
     }
 
-    useEffect(()=>{
-        console.log(imageURL);
-        
-    },[file])
-
     return (
-        <>  
-            <Image onChange={submitFile} src={imageURL} alt='' height={100} width={100}/>
-            <label 
-                htmlFor={`page${param}`} 
-                className='h-full w-full flex items-center justify-center font-jura text-[2vh] select-none'
-            >import image</label>
-        </>
-    );
+        <form onSubmit={handleSubmit} className='h-full w-full'>
+            <h1>Data:{data}</h1>
+            <button className='text-2xl font-bold'>submit</button>
+        </form>
+    )
 };
 
 export default ImageImport;
