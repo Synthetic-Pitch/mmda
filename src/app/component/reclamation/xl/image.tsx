@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import { submitForm } from '@/app/action/sumitform';
+
 type Props = {
     param:number
 }
@@ -10,6 +11,8 @@ const ImageImport = ({param}:Props) => {
     const [data,setData] = useState<string>('');
 
     const handleSubmit = async ()=>{
+        console.log(param);
+        
         event?.preventDefault();
         
         try{
