@@ -8,7 +8,7 @@ type Props = {
 
 const ImageImport = ({param}:Props) => {
     
-    const [data,setData] = useState<string>('');
+
 
     const handleSubmit = async ()=>{
         console.log(param);
@@ -23,10 +23,10 @@ const ImageImport = ({param}:Props) => {
             console.error(err); console.log(err);
         }
     }
-    
+
     return (
         <form onSubmit={handleSubmit} className='h-full w-full bg-[red]'>
-            <h1>Data:{data}</h1>
+            <h1>Data:</h1>
             <button className='text-2xl font-bold'>submit</button>
         </form>
     )
