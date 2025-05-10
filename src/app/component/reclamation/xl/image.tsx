@@ -23,7 +23,7 @@ const ImageImport = ({param}:Props) => {
             console.error(err); console.log(err);
         }
     }
-
+    
     return (
         <form onSubmit={handleSubmit} className='h-full w-full bg-[red]'>
             <h1>Data:{data}</h1>
