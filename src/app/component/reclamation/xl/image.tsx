@@ -11,6 +11,7 @@ const ImageImport = ({param}:Props) => {
 
     const handleSubmit = async ()=>{
         event?.preventDefault();
+        
         try{
             const e: string = 'hello'; 
             submitForm({e});
@@ -21,7 +22,7 @@ const ImageImport = ({param}:Props) => {
     }
 
     return (
-        <form onSubmit={handleSubmit} className='h-full w-full'>
+        <form onSubmit={handleSubmit} className='h-full w-full bg-[red]'>
             <h1>Data:{data}</h1>
             <button className='text-2xl font-bold'>submit</button>
         </form>

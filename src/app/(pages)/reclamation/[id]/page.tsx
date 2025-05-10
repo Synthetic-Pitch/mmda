@@ -8,7 +8,6 @@ const Page = async  ({params}:{params:Promise<{id:string}>}) => {
     const parsedId = parseInt(id, 10);
     
     if(parsedId === 0 || parsedId > 4){
-        console.log('hey');
         return <RouteNotfound/>
     }
     
