@@ -69,7 +69,6 @@ export const loginSlice = createSlice({
 })
 
 export const {
-
     setLogin_Username,setLogin_Password,setTypeError_Username,setTypeError_Password,
     setBtnTrigger,setCreate_Username,setCreate_Password,setCreate_Gmail
 

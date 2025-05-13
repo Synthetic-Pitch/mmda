@@ -27,8 +27,7 @@ const Card = ({pages,param}:Props) => {
             
             <p className='text-[3.5vh] h-[10%] text-center select-none'>{pages[param-1].description}</p>
             
-            <section className='bg-[#D9D9D9] h-[35%] w-[60%] relative'>
-                
+            <section className='h-[35%] w-[60%] relative'>
                 <ImageImport param={param}/>
             </section>
             
@@ -43,7 +42,7 @@ const Card = ({pages,param}:Props) => {
                         )
                     }
                 </section>
-
+                
                 <section className='w-[50%] h-full flex items-center justify-center'>
                     {
                         param < 4 ? (
@@ -58,7 +57,6 @@ const Card = ({pages,param}:Props) => {
                         )
                     }
                 </section>
-                
             </footer>
         </div>
     );
