@@ -3,7 +3,7 @@ import { AnimatePresence } from 'framer-motion';
 import React, {useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useDispatch, useSelector } from 'react-redux';
-import {setGov_ID_Image1,setGov_ID_Image2,setOR_CR_Image1,setOR_CR_Image2} from '@/app/redux/reclamation'
+import {setGov_ID_Image1,setGov_ID_Image2,setOR_CR_Image1,setOR_CR_Image2,setTicket_Image1,setLicense_Image1,setLicense_Image2} from '@/app/redux/reclamation'
 import Image from 'next/image';
 
 
@@ -56,12 +56,24 @@ const ImageImport = ({ param }: Props) => {
                 }
                 else return;
                 break;
+            case param === 3:
+                if(reclamation.Ticket.image1 === ''){
+                    dispatch(setTicket_Image1(URL.createObjectURL(e.target.files[0])));
+                }
+                else return;
+                break;
+            case param === 4:
+                if(reclamation.License.image1 === ''){
+                    dispatch(setLicense_Image1(URL.createObjectURL(e.target.files[0])));
+                }else if(reclamation.License.image2 === ''){
+                    dispatch(setLicense_Image2(URL.createObjectURL(e.target.files[0])));
+                }
+                else return;
+                break;
+            default:
         }
     };
-    useEffect(()=>{
-        console.log(reclamation.OR_CR.image2);
-        
-    },[reclamation])
+
     return ( 
         <div className='h-full w-full flex flex-col items-center justify-center gap-[2vh]'>
             
@@ -123,16 +135,62 @@ const ImageImport = ({ param }: Props) => {
                             </motion.div>
                         )
                     }
+                    {/* PAGE 3 */}
+                    {
+                        reclamation.Ticket.image1 !== '' && param === 3 && (
+                            <motion.div
+                                initial={{opacity:0, scale:0}}
+                                animate={{opacity:1, scale:1}}
+                                className='relative'
+                            >
+                                <span 
+                                    onClick={()=>dispatch(setTicket_Image1(''))}
+                                    className='absolute top-0 left-[92%] text-[1.1vw] bg-white px-[.5vw] rounded-full cursor-pointer'>X</span>
+                                <Image src={reclamation.Ticket.image1} alt='' width={50} height={50} draggable={false} className='w-[10vw] h-[10vw] object-contain'/>
+                            </motion.div>
+                        )
+                    }
+                    {/* PAGE 4 */}
+                    {
+                        reclamation.License.image1 !== '' && param === 4 && (
+                            <motion.div
+                                initial={{opacity:0, scale:0}}
+                                animate={{opacity:1, scale:1}}
+                                className='relative'
+                            >
+                                <span 
+                                    onClick={()=>dispatch(setLicense_Image1(''))}
+                                    className='absolute top-0 left-[92%] text-[1.1vw] bg-white px-[.5vw] rounded-full cursor-pointer'>X</span>
+                                <Image src={reclamation.License.image1} alt='' width={50} height={50} draggable={false} className='w-[10vw] h-[10vw] object-contain'/>
+                            </motion.div>
+                        )
+                    }
+                    {
+                        reclamation.License.image2 !== '' && param === 4 && (
+                            <motion.div
+                                initial={{opacity:0, scale:0}}
+                                animate={{opacity:1, scale:1}}
+                                className='relative'
+                            >
+                                <span 
+                                    onClick={()=>dispatch(setLicense_Image2(''))}
+                                    className='absolute top-0 left-[92%] text-[1.1vw] bg-white px-[.5vw] rounded-full cursor-pointer'>X</span>
+                                <Image src={reclamation.License.image2} alt='' width={50} height={50} draggable={false} className='w-[10vw] h-[10vw] object-contain'/>
+                            </motion.div>
+                        )
+                    }
                 </AnimatePresence>
                
             </div>
                
-            
-
             <label
                 htmlFor="imgURL"
                 className={`py-[1vw] px-[3vw] border-1 border-black text-[1.2vw] rounded-2xl cursor-pointer 
-                    ${reclamation.Gov_ID.image1 !== '' && reclamation.Gov_ID.image2 !== '' && param === 1 ? 'hidden':'block'}`}
+                ${reclamation.Gov_ID.image1 !== '' && reclamation.Gov_ID.image2 !== '' && param === 1 ? 'hidden':'block'}
+                ${reclamation.OR_CR.image1 !== '' && reclamation.OR_CR.image2 !== '' && param === 2 ? 'hidden':'block'}
+                ${reclamation.Ticket.image1 !== '' && param === 3 ? 'hidden':'block'}
+                ${reclamation.License.image1 !== '' && reclamation.License.image2 !== '' && param === 4 ? 'hidden':'block'}
+                `}
             >import image</label>
 
             <input 
