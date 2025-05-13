@@ -1,9 +1,9 @@
 'use client'
 import { AnimatePresence } from 'framer-motion';
-import React, {useEffect, useState } from 'react';
+import React, {useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useDispatch, useSelector } from 'react-redux';
-import {setGov_ID_Image1,setGov_ID_Image2} from '@/app/redux/reclamation'
+import {setGov_ID_Image1,setGov_ID_Image2,setOR_CR_Image1,setOR_CR_Image2} from '@/app/redux/reclamation'
 import Image from 'next/image';
 
 
@@ -48,14 +48,26 @@ const ImageImport = ({ param }: Props) => {
                 }
                 else return;
                 break;
+            case param === 2:
+                if(reclamation.OR_CR.image1 === ''){
+                    dispatch(setOR_CR_Image1(URL.createObjectURL(e.target.files[0])));
+                }else if(reclamation.OR_CR.image2 === ''){
+                    dispatch(setOR_CR_Image2(URL.createObjectURL(e.target.files[0])));
+                }
+                else return;
+                break;
         }
     };
-
+    useEffect(()=>{
+        console.log(reclamation.OR_CR.image2);
+        
+    },[reclamation])
     return ( 
         <div className='h-full w-full flex flex-col items-center justify-center gap-[2vh]'>
             
             <div className='flex gap-[2vw] relative'>
-                <AnimatePresence>
+                <AnimatePresence mode='wait'>
+                        {/* PAGE 1 */}
                     {
                         reclamation.Gov_ID.image1 !== '' && param === 1 && (
                             <motion.div 
@@ -79,6 +91,35 @@ const ImageImport = ({ param }: Props) => {
                                     onClick={()=>dispatch(setGov_ID_Image2(''))}
                                     className='absolute top-0 left-[92%] text-[1.1vw] bg-white px-[.5vw] rounded-full cursor-pointer'>X</span>
                                 <Image src={reclamation.Gov_ID.image2} alt='' width={50} height={50} draggable={false} className='w-[10vw] h-[10vw] object-contain'/>
+                            </motion.div>
+                        )
+                    }
+                        {/* PAGE 2 */}
+                    {
+                        reclamation.OR_CR.image1 !== '' && param === 2 && (
+                            <motion.div
+                                initial={{opacity:0, scale:0}}
+                                animate={{opacity:1, scale:1}}
+                                className='relative'
+                            >
+                                <span 
+                                    onClick={()=>dispatch(setOR_CR_Image1(''))}
+                                    className='absolute top-0 left-[92%] text-[1.1vw] bg-white px-[.5vw] rounded-full cursor-pointer'>X</span>
+                                <Image src={reclamation.OR_CR.image1} alt='' width={50} height={50} draggable={false} className='w-[10vw] h-[10vw] object-contain'/>
+                            </motion.div>
+                        )
+                    }
+                     {
+                        reclamation.OR_CR.image2 !== '' && param === 2 && (
+                            <motion.div
+                                initial={{opacity:0, scale:0}}
+                                animate={{opacity:1, scale:1}}
+                                className='relative'
+                            >
+                                <span 
+                                    onClick={()=>dispatch(setOR_CR_Image2(''))}
+                                    className='absolute top-0 left-[92%] text-[1.1vw] bg-white px-[.5vw] rounded-full cursor-pointer'>X</span>
+                                <Image src={reclamation.OR_CR.image2} alt='' width={50} height={50} draggable={false} className='w-[10vw] h-[10vw] object-contain'/>
                             </motion.div>
                         )
                     }
