@@ -1,6 +1,6 @@
 'use client'
 import { AnimatePresence } from 'framer-motion';
-import React, {useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { useDispatch, useSelector } from 'react-redux';
 import {setGov_ID_Image1,setGov_ID_Image2,setOR_CR_Image1,setOR_CR_Image2,setTicket_Image1,setLicense_Image1,setLicense_Image2} from '@/app/redux/reclamation'
