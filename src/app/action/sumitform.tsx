@@ -1,9 +1,9 @@
 'use server'
 
-
-type Prop = {
-    e:string
-}
-export async function submitForm(e:Prop){
-    return console.log(e);
+export async function submitForm(formData: unknown) {
+    if(!(formData instanceof FormData)){
+        throw new Error('Invalid form data');
+    }
+   
+    return console.log(formData);
 }
