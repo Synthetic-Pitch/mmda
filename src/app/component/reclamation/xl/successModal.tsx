@@ -39,16 +39,6 @@ const SuccessModal: React.FC<Props> = ({transasctionHashID}) => {
     console.log(reclamationData);
   },[]);
 
-  // Basically this is a hash generator
-  // It generates a random hash using the crypto API
-  const generateHash = () => { 
-    const array = new Uint8Array(32);
-    window.crypto.getRandomValues(array);
-    const randomData = Array.from(array).map(b => b.toString(16).padStart(2, '0')).join('');
-    const timestamp = Date.now().toString();
-    const data = randomData + timestamp;
-    return data;
-  }
   
   const handleDownloadasPDF = async () =>{
     if(!ref.current)return;
@@ -62,7 +52,7 @@ const SuccessModal: React.FC<Props> = ({transasctionHashID}) => {
 
     const imgHeight =(canvas.height * imgWidth) / canvas.width;
 
-    let position = 0;
+    const position = 0;
     pdf.addImage(imgData,"PNG",0,position,imgWidth,imgHeight);
     pdf.save("document.pdf")
 

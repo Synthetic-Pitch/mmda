@@ -65,6 +65,8 @@ export async function submitForm(formData: unknown) {
     });
     }
     catch(err){
+        console.error(err);
+        
         return { success: false, error: "Failed to generate transaction hash" };
     }
    
