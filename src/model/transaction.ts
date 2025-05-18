@@ -1,14 +1,14 @@
 import mongoose,{Schema,Document,Model} from "mongoose";
 
 export interface ITransaction extends Document{
-    userID:string;
+    transactionID:string;
     imgURL:{ img:string } [];
 }
 
 const TransactionSchema:Schema<ITransaction> = new Schema({
-    userID:{type:String,required:true},
+    transactionID:{required:true,type:String},
     imgURL:[
-        { img:String,required:true}
+       { img: { type: String, required: true } }
     ]
 });
 

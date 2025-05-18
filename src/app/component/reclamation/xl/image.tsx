@@ -185,20 +185,22 @@ const ImageImport = ({ param }: Props) => {
                
             <label
                 htmlFor="imgURL"
-                className={`py-[1vw] px-[3vw] border-1 border-black text-[1.2vw] rounded-2xl cursor-pointer 
+                className={`py-[.7vw] px-[3vw] border-1 border-black text-[1.2vw] rounded-2xl cursor-pointer 
                 ${reclamation.Gov_ID.image1 !== '' && reclamation.Gov_ID.image2 !== '' && param === 1 ? 'hidden':'block'}
                 ${reclamation.OR_CR.image1 !== '' && reclamation.OR_CR.image2 !== '' && param === 2 ? 'hidden':'block'}
                 ${reclamation.Ticket.image1 !== '' && param === 3 ? 'hidden':'block'}
                 ${reclamation.License.image1 !== '' && reclamation.License.image2 !== '' && param === 4 ? 'hidden':'block'}
                 `}
             >import image</label>
-
+           
             <input 
                 type="file" 
                 id='imgURL' 
                 className='hidden'  
                 onChange={handleSubmit} 
                 multiple 
+                accept='image/*'
+                capture='environment'
             />
         </div>
     );

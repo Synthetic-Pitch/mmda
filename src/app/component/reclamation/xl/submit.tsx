@@ -1,7 +1,10 @@
 'use client'
-import React, { useRef } from 'react';
+import React, { useState } from 'react';
 import { submitForm } from '@/app/action/sumitform';
 import { useSelector } from 'react-redux';
+
+import FailedModal from './failedModal';
+import SuccessModal from './successModal';
 
 type Props = {
     className: string
@@ -29,11 +32,12 @@ type State = {
 
 const Submit = ({className}:Props) => {
     const reclamationImg = useSelector((state:State)=> state.reclamationSlice)
-    const ref = useRef<HTMLDialogElement>(null);
+    const [successModal, setSuccessModal] = useState(false);
+    const [failedModal, setFailedModal] = useState(false);
+    const [transasctionHashID, setTransactionHashID] = useState('');
 
     const handleSubmit = async () => {
        
-        
         if(
             reclamationImg.Gov_ID.image1 === '' ||
             reclamationImg.Gov_ID.image2 === '' ||
@@ -41,14 +45,12 @@ const Submit = ({className}:Props) => {
             reclamationImg.OR_CR.image2 === '' ||
             reclamationImg.Ticket.image1 === '' ||
             reclamationImg.License.image1 === '' ||
-            reclamationImg.License.image2 === ''
+            reclamationImg.License.image2 === '' 
         ){
-            if (!ref.current) return;
-            ref.current.showModal();
+            setFailedModal(true);
         }
-        
+
         try{
-           
             const formData = new FormData();
             formData.append('Gov_ID_image1', reclamationImg.Gov_ID.image1);
             formData.append('Gov_ID_image2', reclamationImg.Gov_ID.image2);
@@ -57,24 +59,31 @@ const Submit = ({className}:Props) => {
             formData.append('Ticket_image1', reclamationImg.Ticket.image1);
             formData.append('License_image1', reclamationImg.License.image1);
             formData.append('License_image2', reclamationImg.License.image2);
-           await submitForm(formData);
+            
+            const result = await submitForm(formData);  
+            if(result.success){
+                setSuccessModal(true);
+                setTransactionHashID(result.transactionHash ?? '');
+            }else{
+                console.log('Failed');
+            } 
         }
         catch(err){
             console.log(err)
         }
-        finally{
-          
-        }
+        
     }
     
     return (
         <>
-            <dialog ref={ref} 
-                className='w-[40vw] h-[20vw] bg-[#c4c4c4] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 rounded-[1vw]'>
-                <h1 className='text-[2vw]'>HELLO</h1>
-              
-            </dialog>
-            <button className={`${className}`} onClick={handleSubmit}>Submit</button>
+           {
+                successModal && <SuccessModal transasctionHashID={transasctionHashID}/>
+           }
+
+           {
+                failedModal && <FailedModal/>
+           }
+            <button className={`${className}`} onClick={handleSubmit} disabled={successModal}>Submit</button>
         </>
     );
 };

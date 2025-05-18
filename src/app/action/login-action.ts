@@ -2,8 +2,6 @@
 import User from "@/model/login-model";
 import MongoDbConnect from "../../../lib/mongoDbConnection";
 
-
-
 export async function LoginAction(credentials:{login_username:string,login_password:string}) {
     await MongoDbConnect();
     const usernameGET = await User.find({ username: credentials.login_username });

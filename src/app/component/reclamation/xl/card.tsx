@@ -25,7 +25,7 @@ const Card = ({pages,param}:Props) => {
                 {pages[param-1].step}
             </h1>
             
-            <p className='text-[3.5vh] h-[10%] text-center select-none'>{pages[param-1].description}</p>
+            <p className='text-[3vh] h-[10%] text-center select-none '>{pages[param-1].description}</p>
             
             <section className='h-[35%] w-[60%] relative'>
                 <ImageImport param={param}/>
