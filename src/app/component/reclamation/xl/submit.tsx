@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { submitForm } from '@/app/action/sumitform';
 import { useSelector } from 'react-redux';
 
@@ -73,17 +73,19 @@ const Submit = ({className}:Props) => {
         }
         
     }
-    
+    useEffect(()=>{
+
+    },[])
     return (
         <>
            {
                 successModal && <SuccessModal transasctionHashID={transasctionHashID}/>
            }
-
+            
            {
-                failedModal && <FailedModal/>
+                failedModal && <FailedModal setFailedModal={setFailedModal}/>
            }
-            <button className={`${className}`} onClick={handleSubmit} disabled={successModal}>Submit</button>
+            <button className={`${className}`} onClick={handleSubmit} disabled={successModal || failedModal}>Submit</button>
         </>
     );
 };

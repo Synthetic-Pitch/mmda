@@ -4,7 +4,9 @@ import { QRCodeCanvas } from "qrcode.react";
 import React, { useEffect, useRef, useState } from 'react'
 import { jsPDF } from "jspdf";
 import html2canvas from "html2canvas";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useRouter } from "next/navigation";
+import { reset } from "@/app/redux/reclamation";
 
 type State = {
   reclamationSlice:{
@@ -34,6 +36,9 @@ const SuccessModal: React.FC<Props> = ({transasctionHashID}) => {
   const [qrCode, setQrCode] = useState<string>('');
   const reclamationData = useSelector((state:State)=>state.reclamationSlice);
   const ref = useRef(null);
+  const route = useRouter();
+  const dispatch = useDispatch()
+  
   useEffect(()=>{
     setQrCode(transasctionHashID);
     console.log(reclamationData);
@@ -42,21 +47,24 @@ const SuccessModal: React.FC<Props> = ({transasctionHashID}) => {
   
   const handleDownloadasPDF = async () =>{
     if(!ref.current)return;
- 
+  
     const element =ref.current
     const canvas = await html2canvas(element);
     const imgData =canvas.toDataURL("image/png");
     const pdf = new jsPDF("p","mm","a4")
 
-    const imgWidth =210;
+    const imgWidth = 86.44;
+    const imgHeight = 44.18;
 
-    const imgHeight =(canvas.height * imgWidth) / canvas.width;
-
-    const position = 0;
-    pdf.addImage(imgData,"PNG",0,position,imgWidth,imgHeight);
-    pdf.save("document.pdf")
-
+    pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
+    pdf.save('mmda-recipt.pdf');
   }
+  const handleDone = () =>{
+    dispatch(reset());
+    route.push('/home')
+  }
+
+
   return (
     <dialog open className='h-[30vw] w-[40vw] bg-[#d2d2d2] p-[2vw] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 rounded-[1.5vw]' draggable='false'>
       <h2 className='text-center text-[.8vw] font-bold select-none' >
@@ -82,9 +90,9 @@ const SuccessModal: React.FC<Props> = ({transasctionHashID}) => {
       <div className="w-full flex justify-end py-[2%]">
         <button onClick={handleDownloadasPDF} className="bg-[#9a9a9a] text-[1.4vw] px-[2%] cursor-pointer select-none">download recipt</button>
       </div>
-
+        
        <div className="w-full flex justify-end">
-        <button className="bg-[#9a9a9a] text-[1.4vw] px-[2%] cursor-pointer select-none">done</button>
+        <button onClick={handleDone} className="bg-[#9a9a9a] text-[1.4vw] px-[2%] cursor-pointer select-none">done</button>
       </div>
     </dialog>
 

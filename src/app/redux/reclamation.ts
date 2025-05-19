@@ -63,7 +63,8 @@ const reclamationSlice = createSlice({
         },
         setLicense_Image2:(state,action)=>{
             state.License.image2 = action.payload
-        }
+        },
+        reset: () => initialState,  // <-- reset state to initialState
     }
 })
 
@@ -71,6 +72,7 @@ export const {
     setGov_ID_Image1,setGov_ID_Image2,
     setOR_CR_Image1,setOR_CR_Image2,
     setTicket_Image1,
-    setLicense_Image1,setLicense_Image2
+    setLicense_Image1,setLicense_Image2,
+    reset
 } = reclamationSlice.actions;
 export default reclamationSlice.reducer;
