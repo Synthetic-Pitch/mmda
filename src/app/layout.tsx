@@ -1,6 +1,6 @@
 import Provider from './redux/ReduxProvider'
 import "./globals.css";
-import { Lakki_Reddy,Poppins,Big_Shoulders_Display,Koulen,Kumar_One,Krona_One,Kadwa,Kufam,Poor_Story,Port_Lligat_Slab, Jura, Protest_Strike, Just_Another_Hand, Karantina } from "next/font/google";
+import { Lakki_Reddy,Poppins,Big_Shoulders_Display,Koulen,Kumar_One,Krona_One,Kadwa,Kufam,Poor_Story,Port_Lligat_Slab, Jura, Protest_Strike, Just_Another_Hand, Karantina, Poly } from "next/font/google";
 
 import SessionProvider from './authProvider/sessionProvider';
 
@@ -88,6 +88,13 @@ const karantina = Karantina({
   weight:'400',
   display:'swap'
 })
+const poly = Poly({
+  variable:'--font-poly',
+  subsets:['latin'],
+  weight:'400',
+  display:'swap'
+})
+
 
 export default function RootLayout({
   children,
@@ -100,7 +107,7 @@ export default function RootLayout({
           ${lakki.variable} ${poppins.variable} ${bigShoulder.variable} ${koulen.variable}
           ${kumarOne.variable} ${kronaOne.variable} ${kadwa.variable} ${kufam.variable} 
           ${poorStory.variable}${portlingab.variable}${jura.variable}${proteststrike.variable}
-          ${justanotherhand.variable} ${karantina.variable}
+          ${justanotherhand.variable} ${karantina.variable} ${poly.variable}
           antialiased`}
       >
         <SessionProvider>

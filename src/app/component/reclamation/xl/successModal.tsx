@@ -39,6 +39,8 @@ const SuccessModal: React.FC<Props> = ({transasctionHashID}) => {
   const route = useRouter();
   const dispatch = useDispatch()
   
+
+  
   useEffect(()=>{
     setQrCode(transasctionHashID);
     console.log(reclamationData);
@@ -90,7 +92,7 @@ const SuccessModal: React.FC<Props> = ({transasctionHashID}) => {
       <div className="w-full flex justify-end py-[2%]">
         <button onClick={handleDownloadasPDF} className="bg-[#9a9a9a] text-[1.4vw] px-[2%] cursor-pointer select-none">download recipt</button>
       </div>
-        
+
        <div className="w-full flex justify-end">
         <button onClick={handleDone} className="bg-[#9a9a9a] text-[1.4vw] px-[2%] cursor-pointer select-none">done</button>
       </div>

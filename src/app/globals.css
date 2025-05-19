@@ -72,6 +72,8 @@
   --font-protest-strike:"Protest Strike",cursive;
   --font-justanother-hand:"Just Another Hand",cursive;
   --font-karantina:'Karantina',cursive;
+  --font-poly:"Poly",cursive;
+
   
   --color-skyline:var(--skyline);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -145,7 +147,6 @@
   --sidebar-ring: #8e8e8e;
 }
 
-
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -154,3 +155,4 @@
     @apply bg-background text-foreground;
   }
 }
+

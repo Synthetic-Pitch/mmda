@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 
 import FailedModal from './failedModal';
 import SuccessModal from './successModal';
+import Loading from './loading';
 
 type Props = {
     className: string
@@ -35,6 +36,7 @@ const Submit = ({className}:Props) => {
     const [successModal, setSuccessModal] = useState(false);
     const [failedModal, setFailedModal] = useState(false);
     const [transasctionHashID, setTransactionHashID] = useState('');
+    const [loading,setLoading] = useState(false)
 
     const handleSubmit = async () => {
        
@@ -48,9 +50,11 @@ const Submit = ({className}:Props) => {
             reclamationImg.License.image2 === '' 
         ){
             setFailedModal(true);
+            return;
         }
 
         try{
+            setLoading(true)
             const formData = new FormData();
             formData.append('Gov_ID_image1', reclamationImg.Gov_ID.image1);
             formData.append('Gov_ID_image2', reclamationImg.Gov_ID.image2);
@@ -70,6 +74,8 @@ const Submit = ({className}:Props) => {
         }
         catch(err){
             console.log(err)
+        }finally{
+            setLoading(false)
         }
         
     }
@@ -77,14 +83,18 @@ const Submit = ({className}:Props) => {
 
     },[])
     return (
-        <>
-           {
+        <>  
+            {
+                loading && <Loading/>
+            }
+
+            {
                 successModal && <SuccessModal transasctionHashID={transasctionHashID}/>
-           }
-            
-           {
+            }
+                
+            {
                 failedModal && <FailedModal setFailedModal={setFailedModal}/>
-           }
+            }
             <button className={`${className}`} onClick={handleSubmit} disabled={successModal || failedModal}>Submit</button>
         </>
     );
