@@ -30,11 +30,11 @@ const WebcamComponent = () => {
             <span className="text-[1.2vw]">valid government ID</span>
             <span className="text-[1.2vw]">Proof of Vehicle Ownership (CR & OR)</span>
             <span className="text-[1.2vw]">Towing Receipt or Violation Ticket</span>
-            <span className="text-[1.2vw]">valid Driver's License</span>
+            <span className="text-[1.2vw]">valid Driver&apos;s License</span>
           </section>
 
           <footer className="flex-grow p-[2vw] flex flex-col items-end justify-end gap-[10%] ">
-            <h2 className="text-[1.5vw] font-poppins font-bold">Atty. Chm. Romando "Don" S. Artes</h2>
+            <h2 className="text-[1.5vw] font-poppins font-bold">Atty. Chm. Romando &quot;Don&quot; S. Artes</h2>
             <Link href={'/reclamation/1'} className="bg-[#D9D9D9] font-poly px-[1.6vw] py-[.6vw] text-[1.2vw] rounded-[20vw]">start submisssion</Link>
           </footer>
         </main>
