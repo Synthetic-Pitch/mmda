@@ -6,7 +6,7 @@ import img3 from '../../../../public/assets/icons/reclamation-1.png'
 import Menu from "@/app/component/reclamation/xl/menu"
 
 
-const WebcamComponent = () => {
+const Reclamation = () => {
   
   return (
     <div className='h-screen w-full bg-[#94A6FF]'>
@@ -44,4 +44,4 @@ const WebcamComponent = () => {
   )
 }
 
-export default WebcamComponent
+export default Reclamation
