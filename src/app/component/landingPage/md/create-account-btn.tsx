@@ -31,10 +31,7 @@ const CreateAccountBtn = () => {
 
     const handleLogin = async  () => {
         // check if the username and password is valid thens set setTypeError_Username/setTypeError_Password
-        
         const results = await LoginAction(credentials);
-        console.log(results);
-        
         if(!results.username){
             dispatch(setTypeError_Username(true));
         }else dispatch(setTypeError_Username(false));
@@ -43,13 +40,10 @@ const CreateAccountBtn = () => {
             dispatch(setTypeError_Password(true))
         } else dispatch(setTypeError_Password(false))
    
-        
         if(results.username && results.password){
-         
             const uiid = crypto.randomUUID();
             router.push(`/${uiid}`);
         }
-        
         dispatch(setBtnTrigger());
     }
     return (
