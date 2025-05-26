@@ -5,7 +5,6 @@ import img2 from '../../../../public/assets/icons/reclamation-2.png'
 import img3 from '../../../../public/assets/icons/reclamation-1.png'
 import Menu from "@/app/component/reclamation/xl/menu"
 
-
 const Reclamation = () => {
   
   return (
