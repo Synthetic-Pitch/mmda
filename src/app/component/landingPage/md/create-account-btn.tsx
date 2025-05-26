@@ -56,7 +56,7 @@ const CreateAccountBtn = () => {
         <div className='font-krona-One w-full flex flex-col justify-center'>
             <button 
                 onClick={handleLogin}
-                className='cursor-pointer text-[14px] hover:underline'>Log inner</button>
+                className='cursor-pointer text-[14px] hover:underline'>Log in</button>
             <button className='cursor-pointer text-[14px]  hover:underline' onClick={handleCreateAccount}>create account</button>
             <div className='w-full h-[30px] flex justify-center items-center gap-[3%]'>
                 <hr className='m-0 p-0 h-[4px] w-[29%] bg-black'/>
