@@ -17,9 +17,9 @@ type State = {
 }
 
 const LoginPhase = () => {
-    const credentials = useSelector((state:State)=>state.loginSlice.loginState);
-    const dispatch = useDispatch();
-    
+    // const credentials = useSelector((state:State)=>state.loginSlice.loginState);
+    // const dispatch = useDispatch();
+
     return (
         <>
             <section className='w-[80%] rounded-[40px] h-[15%] max-h-[70px] border-2 border-black relative'>
