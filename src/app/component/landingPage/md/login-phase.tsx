@@ -27,19 +27,19 @@ const LoginPhase = () => {
         usernameEmpty:false,
         passwordEmpty:false
     });
-    const handleAction =(event:React.FormEvent)=>{
+    const handleAction =(event:React.FormEvent) => {
         event.preventDefault();
         console.log('formdata',event.currentTarget);
     }
+    
     useEffect(() => {
         //so this is Functional Updater I'd use to check if the username and password is empty
         setEmpty(() => ({
             usernameEmpty: credentials.login_username === '',
             passwordEmpty: credentials.login_password === ''
         }));// eslint-disable-next-line react-hooks/exhaustive-deps
-    
     }, [Trigger]);
-            
+    
     return (
         <form onSubmit={handleAction} className='h-1/2 w-full flex flex-col justify-center items-center gap-4'>
             <section className='w-[80%] rounded-[40px] h-[40%] max-h-[70px] border-2 border-black relative'>
