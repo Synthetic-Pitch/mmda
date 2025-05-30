@@ -1,5 +1,5 @@
 'use client'
-import { Textarea } from '@/components/ui/textarea'
+import { Textarea } from '@/shadcn/ui/textarea'
 import React, { useState } from 'react'
 
 const Phase1 = () => {
