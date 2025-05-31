@@ -44,7 +44,7 @@ const LoginPhase1 = () => {
     }, [Trigger]);
 
   return (
-    <div className='h-full w-full flex flex-col items-center justify-center gap-[10%]'>
+    <form onSubmit={handleAction} className='h-full w-full flex flex-col items-center justify-center gap-[10%]'>
         <section className='w-[80%] h-[30%] border-2 border-black relative rounded-3xl'>
             <label htmlFor="" className='absolute ml-4 -mt-3 bg-black text-white px-2 rounded-2xl text-sm'> username</label>
             <input 
@@ -96,7 +96,7 @@ const LoginPhase1 = () => {
                   </motion.span>
               }
         </section>
-    </div>
+    </form>
   );
 };
 
