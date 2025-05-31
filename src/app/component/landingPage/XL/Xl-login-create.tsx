@@ -26,15 +26,13 @@ const XlLoginCreate = () => {
     const router = useRouter();
     const dispatch = useDispatch();
     const credentials = useSelector((state:State)=>state.loginSlice.loginState);
-
-
+    
     const handleCreateAccount = () => {
         dispatch(setcreateAccount());
     }
     
     const handleLogin = async  () => {
         // check if the username and password is valid thens set setTypeError_Username/setTypeError_Password
-        
         const results = await LoginAction(credentials);
         
         if(!results.username){

@@ -1,8 +1,9 @@
 import React from 'react';
 
 const CreatePhase = () => {
+  
   return (
-    <div>
+    <div className='w-full h-full bg-red-300'>
         CreatePhase
     </div>
   );

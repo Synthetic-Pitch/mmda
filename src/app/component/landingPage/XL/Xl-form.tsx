@@ -18,8 +18,6 @@ type State = {
     }
 }
 
-
-
 const XlForm = () => {
     const inputTypeError = useSelector((state:State)=>state.loginSlice.inputTypeError);
     const credentials = useSelector((state:State)=>state.loginSlice.loginState);
@@ -44,7 +42,6 @@ const XlForm = () => {
         }));
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [Trigger]);
-    
     
     return (
         <form onSubmit={handleAction} className='w-full h-full flex flex-col justify-evenly items-center gap-4'>

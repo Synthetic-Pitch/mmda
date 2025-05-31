@@ -93,7 +93,7 @@ const XlCreateAccount = () => {
                             transition={{
                                 duration:0.2
                             }}
-                            className='absolute top-[100%] text-[12px] text-[blue]'>enter username
+                            className='absolute top-[100%] text-[12px] text-[#ff4646]'>enter username
                         </motion.span>
                     }
                     
@@ -117,7 +117,7 @@ const XlCreateAccount = () => {
                             transition={{
                                 duration:0.2
                             }}
-                            className='absolute top-[100%] text-[12px] text-[red]'>enter username
+                            className='absolute top-[100%] text-[12px] text-[#ff4646]'>enter password
                         </motion.span>
                     }
 
@@ -140,7 +140,7 @@ const XlCreateAccount = () => {
                             transition={{
                                 duration:0.2
                             }}
-                            className='absolute top-[100%] text-[12px] text-[red]'>enter username
+                            className='absolute top-[100%] text-[12px] text-[#ff4646]'>enter username
                         </motion.span>
                     }
                 </section>
