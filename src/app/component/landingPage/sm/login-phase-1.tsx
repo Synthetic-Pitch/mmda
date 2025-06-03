@@ -29,7 +29,7 @@ const LoginPhase1 = () => {
         passwordEmpty:false
     });
     
-    const handleAction =(event:React.FormEvent)=>{
+    const handleAction =(event:React.FormEvent) => {
         event.preventDefault();
         console.log('formdata',event.currentTarget);
     }

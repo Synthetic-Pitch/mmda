@@ -22,7 +22,7 @@ const XlCreateAccount = () => {
     const dispatch = useDispatch();
     const [uploading,setUploading] = useState(false);
 
-    const [status,setStatus] = useState({
+    const [status,setStatus] = useState ({
         emptyUsername:false,
         emptyPassword:false,
         emptyGmail:false

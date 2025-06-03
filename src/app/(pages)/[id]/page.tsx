@@ -21,7 +21,6 @@ const Home = () => {
                     <div className='h-[400px]'/>
                     <XlTrafficRoads/>
                 </figure>
-                
             </section>
             
         </div>
