@@ -5,6 +5,7 @@ import {setCreate_Username,setCreate_Gmail,setCreate_Password} from '@/app/redux
 import { CreateAccount } from '@/app/action/create-account-action';
 import {setcreateAccount} from '@/app/redux/effectSlice'
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 type State = {
     loginSlice: {
@@ -116,7 +117,7 @@ const CreatePhase = () => {
                     }}
                     className='absolute top-[100%] left-1/2 -translate-x-1/2 text-[12px] text-[#ff4646]'>enter password
                 </motion.span>
-            }ppp
+            }
         </section>
 
         <section className='w-[80%] h-[20%] max-h-[60px] border-2 border-black rounded-2xl relative'>
@@ -145,7 +146,14 @@ const CreatePhase = () => {
         <button
           onClick={handleCreateAccount}
           className='hover:underline font-krona-One text-sm'>create</button>
-       
+        {
+        uploading && 
+        <Image 
+            src="/assets/images/createloading.png" alt=''
+            height={20} width={20}
+            className='animate-spin'
+        />
+    }
     </div>
   );
 };
