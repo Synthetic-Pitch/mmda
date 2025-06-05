@@ -16,7 +16,7 @@ const FloodControl = () => {
             <Image src={img3} alt='' width={320} height={220} className='object-cover' draggable={false}/>
             <Image src={img1} alt='' width={360} height={280} className='object-cover' draggable={false}/>
         </section>
-        <footer className='flex justify-center items-center mt-6'>
+        <footer className='flex justify-center items-center mt-6 pb-6'>
             <MdFlood size={30}/>
             <p>by maintaning sewage flow we prevent flood</p>
         </footer>

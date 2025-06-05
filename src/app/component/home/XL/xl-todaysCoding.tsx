@@ -19,7 +19,7 @@ const XlTodaysCoding = () => {
     const ref = useRef<HTMLDivElement>(null);
     const [isInView, setIsInView] = useState(false);
     const dispatch = useDispatch();
-
+    
     useEffect(()=>{
         const today = new Date().toLocaleDateString('en-US', { weekday: 'long', timeZone: 'Asia/Manila' })
         

@@ -3,6 +3,7 @@ import FloodControl from '@/app/component/home/sm/flood-control';
 import Navbar from '@/app/component/home/sm/navbar';
 import Navigation from '@/app/component/home/sm/navigation';
 import TodaysCoding from '@/app/component/home/sm/todays-coding';
+import TrafficRoads from '@/app/component/home/sm/traffic-roads';
 import XlFloodControl from '@/app/component/home/XL/xl-floodControl';
 import XlHeader from '@/app/component/home/XL/xl-header';
 import XlNavigation from '@/app/component/home/XL/xl-navigation';
@@ -34,6 +35,7 @@ const Home = () => {
                 </figure>
                 <figure>
                     <TodaysCoding/>
+                    <TrafficRoads/>
                 </figure>
             </section>
             

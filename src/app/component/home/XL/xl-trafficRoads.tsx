@@ -4,6 +4,7 @@ import { FaCar } from "react-icons/fa";
 import { GoDotFill } from "react-icons/go";
 import { useDispatch, useSelector } from 'react-redux';
 import {setTrafficRoads} from '@/app/redux/home'
+
 type State = {
     homeSlice:{
         trafficRoads:boolean
@@ -47,7 +48,6 @@ const XlTrafficRoads = () => {
             dispatch(setTrafficRoads(false));
         }
     }, [isInView]);
-
 
     const redRoads = [
         'España Boulevard','Katipunan Avenue','Gil Puyat Avenue (Buendia)',

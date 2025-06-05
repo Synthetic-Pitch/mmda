@@ -3,6 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import {setTodaysCoding,setTrafficRoads} from '@/app/redux/home';
+
 const Navigation = () => {
     const dispatch = useDispatch();
     
