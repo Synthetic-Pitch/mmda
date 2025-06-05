@@ -1,4 +1,5 @@
 
+import Header from '@/app/component/home/md/header';
 import FloodControl from '@/app/component/home/sm/flood-control';
 import Navbar from '@/app/component/home/sm/navbar';
 import Navigation from '@/app/component/home/sm/navigation';
@@ -9,6 +10,10 @@ import XlHeader from '@/app/component/home/XL/xl-header';
 import XlNavigation from '@/app/component/home/XL/xl-navigation';
 import XlTodaysCoding from '@/app/component/home/XL/xl-todaysCoding';
 import XlTrafficRoads from '@/app/component/home/XL/xl-trafficRoads';
+import NavigationMD from '@/app/component/home/md/navigation'
+import FloodControlMD from '@/app/component/home/md/flood-control'
+import TodaysCodingMD from '@/app/component/home/md/todays-coding'
+
 import React from 'react';
 
 const Home = () => {
@@ -27,6 +32,14 @@ const Home = () => {
                     <XlTrafficRoads/>
                 </figure>
             </section>
+
+            <section className='hidden md:block lg:hidden relative'>
+                <Header/>
+                <NavigationMD/>
+                <FloodControlMD/>
+                <TodaysCodingMD/>
+            </section>
+
             <section className='md:hidden'>
                 <figure className='relative'>
                     <Navbar/>
