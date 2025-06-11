@@ -7,6 +7,7 @@ const Phase1 = () => {
     const [name,setName] = useState<string>('');
     const [gmail,setGmail] = useState<string>('')
     const [message,setMessage] = useState<string>('')
+    
     const submit = ()=>{
         setNUmber('')
         setName('')
@@ -51,9 +52,10 @@ const Phase1 = () => {
                             value={message}
                             onChange={(e)=>{
                                 const target = e.target as HTMLTextAreaElement;
-                                setMessage(target.value)
+                                setMessage(target.value);
                             }}
                         />
+
                         <div
                             className='h-[6vh] w-full flex items-center justify-center'
                         >
