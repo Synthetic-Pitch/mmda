@@ -1,5 +1,9 @@
+'use client'
+
 import React from 'react'
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion'
+
+
 const XlFooter = () => {
     return (
         <div
@@ -29,7 +33,7 @@ const XlFooter = () => {
                     </main>
                 </section>
 
-                <motion.section
+                <motion.div
                     initial={{
                         x:0
                     }}
@@ -42,10 +46,10 @@ const XlFooter = () => {
                         VISION
                     </header>
                     <p className='font-jura text-2xl text-white text-center'>Towards a humane, world-class metropolis with a livable and workable physical environment for all.</p>
-                </motion.section>
+                </motion.div>
             </main>
         </div>
     )
 }
 
-export default XlFooter
+export default XlFooter;

@@ -1,7 +1,6 @@
 
 import Header from '@/app/component/home/md/header';
 import FloodControl from '@/app/component/home/sm/flood-control';
-import Navbar from '@/app/component/home/sm/navbar';
 import Navigation from '@/app/component/home/sm/navigation';
 import TodaysCoding from '@/app/component/home/sm/todays-coding';
 import TrafficRoads from '@/app/component/home/sm/traffic-roads';

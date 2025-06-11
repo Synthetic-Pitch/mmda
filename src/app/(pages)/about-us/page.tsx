@@ -1,10 +1,11 @@
-'use client'
+
+
+import SmBody from '@/app/component/about-us/sm/sm-body';
 import XlFooter from '@/app/component/about-us/XL/xl-footer';
 import XlHeader from '@/app/component/about-us/XL/xl-header';
 import XlUpperBody from '@/app/component/about-us/XL/xl-upper-body';
 import MobileNav from '@/app/component/navbar/mobileNav';
 import React from 'react';
-
 const Page = () => {
 
     return (
@@ -23,8 +24,9 @@ const Page = () => {
                 />
                 <XlFooter/>
             </section>
-            <section className='sm:hidden'>
+            <section className='sm:hidden relative'>
                 <MobileNav/>
+                <SmBody/>
             </section>
         </div>
     );
