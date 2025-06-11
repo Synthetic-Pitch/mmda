@@ -13,7 +13,7 @@ const Navigation = () => {
                 vehicle reclamation
             </Link>
             <button onClick={()=>dispatch(setTodaysCoding(true))} className='w-[80%] h-16 bg-[#D9D9D9] rounded-2xl cursor-pointer'>
-                today's coding
+                today&apos;s coding
             </button>
             <button onClick={()=>dispatch(setTrafficRoads(true))} className='w-[80%] h-16 bg-[#D9D9D9] rounded-2xl cursor-pointer'>
                 traffic roads

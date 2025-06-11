@@ -11,7 +11,7 @@ const dispatch = useDispatch();
         <Link href="reclamation" className=' h-[140px] w-[200px] bg-[#D9D9D9] flex items-center justify-center rounded-xl shadow-[4px_4px_4px_rgba(0,0,0,.5)] cursor-pointer font-poppins'>reclamation</Link>
         <button 
           onClick={()=>dispatch(setTodaysCoding(true))} 
-          className='h-[140px] w-[200px] bg-[#D9D9D9] rounded-xl shadow-[4px_4px_4px_rgba(0,0,0,.5)] cursor-pointer font-poppins'>today's coding</button>
+          className='h-[140px] w-[200px] bg-[#D9D9D9] rounded-xl shadow-[4px_4px_4px_rgba(0,0,0,.5)] cursor-pointer font-poppins'>today&apos;s coding</button>
         <button 
           onClick={()=>dispatch(setTrafficRoads(true))} 
           className='h-[140px] w-[200px] bg-[#D9D9D9] rounded-xl shadow-[4px_4px_4px_rgba(0,0,0,.5)] cursor-pointer font-poppins'>traffic roads</button>
