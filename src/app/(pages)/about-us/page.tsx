@@ -2,6 +2,7 @@
 import XlFooter from '@/app/component/about-us/XL/xl-footer';
 import XlHeader from '@/app/component/about-us/XL/xl-header';
 import XlUpperBody from '@/app/component/about-us/XL/xl-upper-body';
+import MobileNav from '@/app/component/navbar/mobileNav';
 import React from 'react';
 
 const Page = () => {
@@ -21,6 +22,9 @@ const Page = () => {
                     className='bg-[#cecece]'
                 />
                 <XlFooter/>
+            </section>
+            <section className='sm:hidden'>
+                <MobileNav/>
             </section>
         </div>
     );

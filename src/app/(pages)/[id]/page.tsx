@@ -15,6 +15,7 @@ import FloodControlMD from '@/app/component/home/md/flood-control'
 import TodaysCodingMD from '@/app/component/home/md/todays-coding'
 
 import React from 'react';
+import MobileNav from '@/app/component/navbar/mobileNav';
 
 const Home = () => {
     
@@ -42,7 +43,7 @@ const Home = () => {
 
             <section className='md:hidden'>
                 <figure className='relative'>
-                    <Navbar/>
+                    <MobileNav/>
                     <Navigation/>
                     <FloodControl/>
                 </figure>
