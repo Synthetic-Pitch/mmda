@@ -1,7 +1,9 @@
 
+import Smbody from '@/app/component/faqs/sm/smbody'
 import Accordions from '@/app/component/faqs/xl/accordion'
 import Dashboard from '@/app/component/faqs/xl/dashboard'
 import Header from '@/app/component/faqs/xl/header'
+import MobileNav from '@/app/component/navbar/mobileNav'
 
 import React from 'react'
 
@@ -14,7 +16,10 @@ const Page = () => {
                 <Header/>
                <Accordions/>
             </main>
-           
+        </section>
+        <section className='sm:hidden'>
+            <MobileNav/>
+            <Smbody/>
         </section>
     </div>  
 )
