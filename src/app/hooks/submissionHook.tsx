@@ -127,7 +127,7 @@ const UseSubmissionHook = (param:number) => {
     }
 
   
-    const handleDelete = ({ a, b }: { a: any; b: any }) => {
+    const handleDelete = ({ a, b }: { a: number; b: string }) => {
         console.log(a, b);
         if (b === ImgSrc.img1) {
             setImgSrc(prev => ({ ...prev, img1: '' }));
