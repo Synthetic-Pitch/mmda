@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { submitForm } from '@/app/action/sumitform';
 import { useSelector } from 'react-redux';
 
@@ -37,7 +37,7 @@ const Submit = ({className}:Props) => {
     const [failedModal, setFailedModal] = useState(false);
     const [transasctionHashID, setTransactionHashID] = useState('');
     const [loading,setLoading] = useState(false)
-
+    
     const handleSubmit = async () => {
        
         if(
@@ -79,9 +79,7 @@ const Submit = ({className}:Props) => {
         }
         
     }
-    useEffect(()=>{
-
-    },[])
+   
     return (
         <>  
             {

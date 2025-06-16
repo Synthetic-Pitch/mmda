@@ -78,11 +78,12 @@ const ImageImport = ({ param }: Props) => {
         <div className='h-full w-full flex flex-col items-center justify-center gap-[2vh]'>
             
             <div className='flex gap-[2vw] relative'>
-                <AnimatePresence mode='wait'>
+                <AnimatePresence mode='sync'>
                         {/* PAGE 1 */}
                     {
                         reclamation.Gov_ID.image1 !== '' && param === 1 && (
                             <motion.div 
+                                key="gov-id-1"
                                 initial={{opacity:0, scale:0}}
                                 animate={{opacity:1, scale:1}}
                                 className='relative'>
@@ -96,6 +97,7 @@ const ImageImport = ({ param }: Props) => {
                     {
                         reclamation.Gov_ID.image2 !== '' && param === 1 && (
                             <motion.div 
+                                key="gov-id-2"
                                 initial={{opacity:0, scale:0}}
                                 animate={{opacity:1, scale:1}}
                                 className='relative'>
@@ -110,6 +112,7 @@ const ImageImport = ({ param }: Props) => {
                     {
                         reclamation.OR_CR.image1 !== '' && param === 2 && (
                             <motion.div
+                                key="gov-id-3"
                                 initial={{opacity:0, scale:0}}
                                 animate={{opacity:1, scale:1}}
                                 className='relative'
@@ -121,9 +124,10 @@ const ImageImport = ({ param }: Props) => {
                             </motion.div>
                         )
                     }
-                     {
+                    {
                         reclamation.OR_CR.image2 !== '' && param === 2 && (
                             <motion.div
+                                key="gov-id-4"
                                 initial={{opacity:0, scale:0}}
                                 animate={{opacity:1, scale:1}}
                                 className='relative'
@@ -139,6 +143,7 @@ const ImageImport = ({ param }: Props) => {
                     {
                         reclamation.Ticket.image1 !== '' && param === 3 && (
                             <motion.div
+                                key="gov-id-5"
                                 initial={{opacity:0, scale:0}}
                                 animate={{opacity:1, scale:1}}
                                 className='relative'
@@ -154,6 +159,7 @@ const ImageImport = ({ param }: Props) => {
                     {
                         reclamation.License.image1 !== '' && param === 4 && (
                             <motion.div
+                                key="gov-id-6"
                                 initial={{opacity:0, scale:0}}
                                 animate={{opacity:1, scale:1}}
                                 className='relative'
@@ -168,6 +174,7 @@ const ImageImport = ({ param }: Props) => {
                     {
                         reclamation.License.image2 !== '' && param === 4 && (
                             <motion.div
+                                key="gov-id-7"
                                 initial={{opacity:0, scale:0}}
                                 animate={{opacity:1, scale:1}}
                                 className='relative'

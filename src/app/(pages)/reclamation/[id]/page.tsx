@@ -1,5 +1,6 @@
 import RouteNotfound from '@/app/[...id]/page';
 import Card from '@/app/component/reclamation/xl/card';
+import Card2 from '@/app/component/reclamation/sm/Card';
 import React from 'react';
 
 const Page = async  ({params}:{params:Promise<{id:string}>}) => {
@@ -31,9 +32,12 @@ const Page = async  ({params}:{params:Promise<{id:string}>}) => {
     ];
     
     return (
-        <div className='h-screen bg-[#94A6FF] flex justify-center items-center relative'>
+        <div className='h-[100dvh] bg-[#94A6FF] flex justify-center items-center relative'>
             <section className='hidden lg:flex h-screen items-center'>
                 <Card pages={Pages} param={parsedId}/>
+            </section>
+            <section className='sm:hidden w-full h-[100dvh]'>
+                <Card2 pages={Pages} param={parsedId}/>
             </section>
         </div>
     );
