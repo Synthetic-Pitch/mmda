@@ -62,7 +62,7 @@ const Reclamation = () => {
           </section>
           <footer className="flex-grow p-[2vw] flex flex-col items-end justify-end gap-[10%]">
             <h2 className="text-[4vw] font-poppins font-bold">Atty. Chm. Romando &quot;Don&quot; S. Artes</h2>
-            <Link href={'/reclamation/1'} className="bg-[#D9D9D9] font-poly px-[4.6vw] py-[.6vw] text-[4.5vw] rounded-[20vw]">start submisssion</Link>
+            <Link href={'/reclamation/1'} className="bg-[#D9D9D9] font-poly px-[4.6vw] py-[.6vw] text-[4.2vw] rounded-[20vw]">start submisssion</Link>
           </footer>
         </main>
         

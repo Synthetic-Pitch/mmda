@@ -1,7 +1,7 @@
 'use client'
 import { useDispatch, useSelector } from "react-redux";
 import {setGov_ID_Image1,setGov_ID_Image2,setOR_CR_Image1,setOR_CR_Image2,setTicket_Image1,setLicense_Image1,setLicense_Image2} from '@/app/redux/reclamation';
-
+import { submitForm } from '@/app/action/sumitform';
 //import { submitForm } from '@/app/action/sumitform';
 import { useEffect, useState } from "react";
 
@@ -35,11 +35,11 @@ const UseSubmissionHook = (param:number) => {
         img2:''
     });
     const [hider,setHider] = useState(false);
-
+    const [loading,setLoading] = useState(false);
+    const [isModal, setModal] = useState(false);
+    const [transasctionHashID, setTransactionHashID] = useState('');
     // This Effect watches param and on Redux reclamationImg if it has a value then transfer it to ImgSrc
     useEffect(()=>{
-        console.log(reclamationImg);
-        
         switch(param) {
             case 1 :
                     setIsReclamaion(false);
@@ -85,9 +85,86 @@ const UseSubmissionHook = (param:number) => {
         }               
     },[reclamationImg]);
 
+    // handle submit the user input
     const handleSubmit = async () => {
+
+         if(
+            reclamationImg.Gov_ID.image1 === '' ||
+            reclamationImg.Gov_ID.image2 === '' ||
+            reclamationImg.OR_CR.image1 === '' ||
+            reclamationImg.OR_CR.image2 === '' ||
+            reclamationImg.Ticket.image1 === '' ||
+            reclamationImg.License.image1 === '' ||
+            reclamationImg.License.image2 === '' 
+        ){
+            setModal(!isModal);
+            return;
+        }
         
+        try{
+            setLoading(true)
+            const formData = new FormData();
+            formData.append('Gov_ID_image1', reclamationImg.Gov_ID.image1);
+            formData.append('Gov_ID_image2', reclamationImg.Gov_ID.image2);
+            formData.append('OR_CR_image1', reclamationImg.OR_CR.image1);
+            formData.append('OR_CR_image2', reclamationImg.OR_CR.image2);
+            formData.append('Ticket_image1', reclamationImg.Ticket.image1);
+            formData.append('License_image1', reclamationImg.License.image1);
+            formData.append('License_image2', reclamationImg.License.image2);
+            const result = await submitForm(formData); 
+            if(result.success){
+                setModal(true);
+                setTransactionHashID(result.transactionHash ?? '');
+            }else{
+                console.log('Failed');
+            } 
+        }catch(err){
+            console.error(err);
+        }
+        finally{
+            setLoading(false)
+        }
     }
+
+  
+    const handleDelete = ({ a, b }: { a: any; b: any }) => {
+        console.log(a, b);
+        if (b === ImgSrc.img1) {
+            setImgSrc(prev => ({ ...prev, img1: '' }));
+            
+            switch (a) {
+                case 1:
+                    dispatch(setGov_ID_Image1(''));
+                    break;
+                case 2:
+                    dispatch(setOR_CR_Image1(''));
+                    break;
+                case 3:
+                    dispatch(setTicket_Image1(''));
+                    break;
+                case 4:
+                    dispatch(setLicense_Image1(''));
+                    break;
+            }
+        }
+
+        if (b === ImgSrc.img2) {
+            setImgSrc(prev => ({ ...prev, img2: '' }));
+
+            switch (a) {
+                case 1:
+                    dispatch(setGov_ID_Image2(''));
+                    break;
+                case 2:
+                    dispatch(setOR_CR_Image2(''));
+                    break;
+                case 4:
+                    dispatch(setLicense_Image2(''));
+                    break;
+            }
+        }
+    };
+
     // Handle User imoported image and dispatch as Redux
     const handleImage = (e: React.ChangeEvent<HTMLInputElement>,param:number) => {
         if(!e.target || e.target.files === null || e.target.files === null) return;
@@ -125,10 +202,11 @@ const UseSubmissionHook = (param:number) => {
                 break;
             default:
         }
-    }
-
+    };
+    
     return {
-        handleSubmit,handleImage,reclamationImg,ImgSrc,isReclamation,hider
+        handleSubmit,handleImage,reclamationImg,ImgSrc,isReclamation,
+        hider,handleDelete,loading,isModal,setModal,transasctionHashID
     }
 };
 

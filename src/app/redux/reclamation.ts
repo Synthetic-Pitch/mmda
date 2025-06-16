@@ -47,7 +47,6 @@ const reclamationSlice = createSlice({
         setGov_ID_Image2:(state,action)=>{
             state.Gov_ID.image2 = action.payload
         },
-
         setOR_CR_Image1:(state,action)=>{
             state.OR_CR.image1 = action.payload
         },

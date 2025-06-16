@@ -49,18 +49,19 @@ const SuccessModal: React.FC<Props> = ({transasctionHashID}) => {
   
   const handleDownloadasPDF = async () =>{
     if(!ref.current)return;
-  
+    
     const element =ref.current
     const canvas = await html2canvas(element);
     const imgData =canvas.toDataURL("image/png");
     const pdf = new jsPDF("p","mm","a4")
 
-    const imgWidth = 86.44;
-    const imgHeight = 44.18;
+    const imgWidth = 44.44;
+    const imgHeight = 86.18;
 
     pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
     pdf.save('mmda-recipt.pdf');
   }
+
   const handleDone = () =>{
     dispatch(reset());
     route.push('/home')

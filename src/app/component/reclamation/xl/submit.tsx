@@ -35,7 +35,7 @@ const Submit = ({className}:Props) => {
     const reclamationImg = useSelector((state:State)=> state.reclamationSlice)
     const [successModal, setSuccessModal] = useState(false);
     const [failedModal, setFailedModal] = useState(false);
-    const [transasctionHashID, setTransactionHashID] = useState('');
+    const [transasctionHashID, setTransactionHashID] = useState<string>('');
     const [loading,setLoading] = useState(false)
     
     const handleSubmit = async () => {
@@ -64,7 +64,7 @@ const Submit = ({className}:Props) => {
             formData.append('License_image1', reclamationImg.License.image1);
             formData.append('License_image2', reclamationImg.License.image2);
             
-            const result = await submitForm(formData);  
+            const result = await submitForm(formData);
             if(result.success){
                 setSuccessModal(true);
                 setTransactionHashID(result.transactionHash ?? '');
@@ -85,7 +85,6 @@ const Submit = ({className}:Props) => {
             {
                 loading && <Loading/>
             }
-
             {
                 successModal && <SuccessModal transasctionHashID={transasctionHashID}/>
             }
