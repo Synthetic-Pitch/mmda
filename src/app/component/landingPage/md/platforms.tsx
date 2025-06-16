@@ -21,8 +21,8 @@ const Platforms = () => {
     return (
         <div className='w-full flex items-center justify-center'>
             <main className='w-[50%] bg-[#E5E5E5] px-[4%] py-[1.5%] rounded-4xl flex justify-evenly'>
-                <Image src={im1} alt='' height={50} width={50} draggable={false} onClick={handleGoogleLogin}/>
-                <Image src={im2} alt='' height={50} width={50} draggable={false} onClick={handleGithubLogin}/>
+                <Image src={im1} alt='' height={40} width={40} draggable={false} onClick={handleGoogleLogin}/>
+                <Image src={im2} alt='' height={40} width={40} draggable={false} onClick={handleGithubLogin}/>
             </main>
         </div>
     );

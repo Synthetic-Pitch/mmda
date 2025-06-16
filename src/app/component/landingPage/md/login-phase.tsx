@@ -42,12 +42,13 @@ const LoginPhase = () => {
     
     return (
         <form onSubmit={handleAction} className='h-1/2 w-full flex flex-col justify-center items-center gap-4'>
-            <section className='w-[80%] rounded-[40px] h-[40%] max-h-[70px] border-2 border-black relative'>
+            <section className='w-[80%] rounded-[40px] h-[30%] max-h-[70px] border-2 border-black relative'>
                 <label 
                     htmlFor="username" 
                     className='bg-black text-white px-[8px] rounded-xl absolute -top-3 left-6'
                 >username</label>
                 <input 
+                    autoComplete='off'
                     type="text" 
                     id='username' 
                     className='h-full w-full px-6'
@@ -70,12 +71,13 @@ const LoginPhase = () => {
                     }</motion.span>
                 }
             </section>
-            <section className='w-[80%] rounded-[40px] h-[40%] max-h-[70px] border-2 border-black relative'>
+            <section className='w-[80%] rounded-[40px] h-[30%] max-h-[70px] border-2 border-black relative'>
                 <label 
                     htmlFor="username" 
                     className='bg-black text-white px-[8px] rounded-xl absolute -top-3 left-6'
                 >password</label>
                 <input 
+                    autoComplete='off'
                     type="text" 
                     id='username' 
                     className='h-full w-full px-6'

@@ -20,7 +20,7 @@ const MobileNav = () => {
     
     useEffect(()=>{
         switch(pathname){
-            case "/":
+            case "/": 
                 setIndex(0);
                 break;
             case "/about-us":

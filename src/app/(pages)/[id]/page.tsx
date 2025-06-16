@@ -12,7 +12,7 @@ import XlTrafficRoads from '@/app/component/home/XL/xl-trafficRoads';
 import NavigationMD from '@/app/component/home/md/navigation'
 import FloodControlMD from '@/app/component/home/md/flood-control'
 import TodaysCodingMD from '@/app/component/home/md/todays-coding'
-
+import TrafficRoads2 from '@/app/component/home/md/traffic-roads'
 import React from 'react';
 import MobileNav from '@/app/component/navbar/mobileNav';
 
@@ -33,14 +33,15 @@ const Home = () => {
                 </figure>
             </section>
 
-            <section className='hidden md:block lg:hidden relative'>
+            <section className='hidden sm:block lg:hidden relative'>
                 <Header/>
                 <NavigationMD/>
                 <FloodControlMD/>
                 <TodaysCodingMD/>
+                <TrafficRoads2/>
             </section>
 
-            <section className='md:hidden'>
+            <section className='sm:hidden'>
                 <figure className='relative'>
                     <MobileNav/>
                     <Navigation/>

@@ -25,23 +25,28 @@ const TodaysCoding = () => {
       }
   },[todayCoding]);
 
-  useEffect(()=>{
+  useEffect(() => {
       const observer = new IntersectionObserver(
           ([entry]) => {
               setIsInView(entry.isIntersecting);
           },
-          { threshold: 0.5 } // Adjust threshold as needed
+          {
+              threshold: 0.1, // Less strict: only 10% needs to be visible to count as in view
+          }
       );
-      if (ref.current) {
-          observer.observe(ref.current);
+
+      const currentRef = ref.current;
+
+      if (currentRef) {
+          observer.observe(currentRef);
       }
 
       return () => {
-          if (ref.current) {
-              observer.unobserve(ref.current);
+          if (currentRef) {
+              observer.unobserve(currentRef);
           }
       };
-  },[]);
+  }, []);
 
   useEffect(() => {
       if(!isInView){

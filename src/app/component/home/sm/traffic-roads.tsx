@@ -16,7 +16,7 @@ const TrafficRoads = () => {
     const ref = useRef<HTMLDivElement>(null)
     const dispatch = useDispatch();
     const [isInView, setIsInView] = useState(false);
-
+    
     useEffect(()=>{
         if(!ref)return;
 
