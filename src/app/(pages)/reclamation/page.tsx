@@ -81,7 +81,7 @@ const Reclamation = () => {
               <span className="text-[18px]">valid Driver&apos;s License</span>
           </section>
           <footer>
-            <div className="flex justify-end px-4 font-bold font-poppins pb-4">Atty. Chm. Romando "Don" S. Artes</div>
+            <div className="flex justify-end px-4 font-bold font-poppins pb-4">Atty. Chm. Romando &quot;Don&quot; S. Artes</div>
             <div className="flex justify-end px-12 pb-12">
               <Link href={'/reclamation/1'} className="bg-[#D9D9D9] px-8 py-1 shadow-2xl rounded-full cursor-pointer font-poly">start submission</Link>
             </div>

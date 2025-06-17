@@ -88,7 +88,6 @@ const Modal = ({ transasctionHashID,isModal,setModal }: ModalProps) => {
                         </>
                     )
                 }
-                    
                 </div>
             </main>
         </dialog>
