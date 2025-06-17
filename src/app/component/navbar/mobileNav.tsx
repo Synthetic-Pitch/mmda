@@ -16,7 +16,7 @@ const MobileNav = () => {
         ["home", "impound-info","about-us","faqs"],
         ["home", "about-us","contact-us","faqs"],
         ["home", "impound-info","contact-us","about-us"],
-    ]
+    ];
     
     useEffect(()=>{
         switch(pathname){

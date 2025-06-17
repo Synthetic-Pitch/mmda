@@ -1,10 +1,12 @@
 
 
+import MdBody from '@/app/component/about-us/md/mdBody';
 import SmBody from '@/app/component/about-us/sm/sm-body';
 import XlFooter from '@/app/component/about-us/XL/xl-footer';
 import XlHeader from '@/app/component/about-us/XL/xl-header';
 import XlUpperBody from '@/app/component/about-us/XL/xl-upper-body';
 import MobileNav from '@/app/component/navbar/mobileNav';
+import TabletNav from '@/app/component/navbar/tabletNav';
 import React from 'react';
 const Page = () => {
 
@@ -27,6 +29,10 @@ const Page = () => {
             <section className='sm:hidden relative'>
                 <MobileNav/>
                 <SmBody/>
+            </section>
+            <section className='hidden sm:block lg:hidden relative'>
+                <TabletNav/>
+                <MdBody/>
             </section>
         </div>
     );

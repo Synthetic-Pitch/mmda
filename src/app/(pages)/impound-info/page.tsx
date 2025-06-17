@@ -4,6 +4,7 @@ import Header from '@/app/component/impound/xl/header'
 import Hero from '@/app/component/impound/xl/hero'
 import Section from '@/app/component/impound/xl/section'
 import MobileNav from '@/app/component/navbar/mobileNav'
+import TabletNav from '@/app/component/navbar/tabletNav'
 import React from 'react'
 
 const page = () => {
@@ -23,6 +24,9 @@ const page = () => {
             <section className='sm:hidden relative'>
                 <MobileNav/>
                 <SmBody/>
+            </section>
+            <section className='hidden sm:block lg:hidden'>
+                <TabletNav/>
             </section>
         </main>
     )

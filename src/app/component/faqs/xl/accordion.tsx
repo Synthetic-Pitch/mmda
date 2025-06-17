@@ -11,7 +11,7 @@ import React from 'react'
 const Accordions = () => {
   return (
     <div className='overflow-x-hidden px-20'>
-        
+
             <Accordion type="single" collapsible >
                 <AccordionItem value="item-1" >
                     <AccordionTrigger className=""> What is the MMDA&apos;s No-Contact Apprehension Program (NCAP)?</AccordionTrigger>
@@ -94,11 +94,7 @@ const Accordions = () => {
                         </ul>
                     </AccordionContent>
                 </AccordionItem>
-
-                
             </Accordion>
-        
-    
     </div>
   )
 }

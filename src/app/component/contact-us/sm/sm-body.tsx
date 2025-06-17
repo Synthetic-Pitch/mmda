@@ -2,6 +2,8 @@
 import useContactUs from '@/app/hooks/contactUsHook';
 import React from 'react';
 
+
+
 const SmBody = () => {
     const { 
         handleSubmit,number,name,gmail,message,
@@ -41,8 +43,9 @@ const SmBody = () => {
                     <h2>genuiuneopower123@gmail.com</h2>
                     <h1>REYMARK DEQUITO</h1>
                 </section>
+                
             </section>
-            
+           
         </div>
     );
 };
