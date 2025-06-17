@@ -9,7 +9,7 @@ import MobileNav from "@/app/component/navbar/mobileNav"
 const Reclamation = () => {
   
   return (
-    <div className='h-[100dvh] w-full bg-[#94A6FF]'>
+    <div className='min-h-[100dvh] w-full bg-[#94A6FF] relative'>
       <section className='hidden lg:flex flex-col justify-center min-h-screen'>
         <header className="absolute top-[2%] right-[1%] h-[6vh] w-[5vw] ">
           <Menu/>
@@ -64,8 +64,29 @@ const Reclamation = () => {
         </main>
       </section>
 
-      <section className="">
+      <section className="hidden sm:block lg:hidden relative w-full h-full">
          <MobileNav/>
+         <figure className="w-full h-35 absolute bg-[#D9D9D9] top-40 z-0"/>
+         <main className="relative top-20 z-20 w-[80%]  ml-12 bg-[#AEBCFF]">
+            <header className="flex gap-4 px-8 py-4">
+              <Image src={img1} alt=""  objectFit="contain" width={70} height={70} draggable={false}/>
+              <Image src={img2} alt=""  objectFit="contain" width={70} height={70} draggable={false}/>
+              <Image src={img3} alt=""  objectFit="contain" width={70} height={70} draggable={false}/>
+            </header>
+            <h1 className="font-poppins text-2xl font-bold px-12">REQUIREMENTS TO PROCESS VEHICLE RECLAMATION</h1>
+            <section className="flex flex-col px-[6vw] font-poppins gap-[2vw] mt-[4%] select-none pb-20">
+              <span className="text-[18px]">valid government ID</span>
+              <span className="text-[18px]">Proof of Vehicle Ownership (CR & OR)</span>
+              <span className="text-[18px]">Towing Receipt or Violation Ticket</span>
+              <span className="text-[18px]">valid Driver&apos;s License</span>
+          </section>
+          <footer>
+            <div className="flex justify-end px-4 font-bold font-poppins pb-4">Atty. Chm. Romando "Don" S. Artes</div>
+            <div className="flex justify-end px-12 pb-12">
+              <Link href={'/reclamation/1'} className="bg-[#D9D9D9] px-8 py-1 shadow-2xl rounded-full cursor-pointer font-poly">start submission</Link>
+            </div>
+          </footer>
+         </main>
       </section>
     </div>
   )
