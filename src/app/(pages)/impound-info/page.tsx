@@ -1,3 +1,4 @@
+import MdBody from '@/app/component/impound/md/md-body'
 import SmBody from '@/app/component/impound/sm/sm-body'
 import Dashboard from '@/app/component/impound/xl/dashboard'
 import Header from '@/app/component/impound/xl/header'
@@ -27,6 +28,7 @@ const page = () => {
             </section>
             <section className='hidden sm:block lg:hidden'>
                 <TabletNav/>
+                <MdBody/>
             </section>
         </main>
     )

@@ -39,7 +39,7 @@ const TabletNav = () => {
           Routing[index].map((item,index)=>(
             <Link 
               href={`/${item}`} key={index} 
-              className={`${(pathname === '/about-us' || pathname === '/contact-us') ? 'text-white':'text-black'}`}
+              className={`${(pathname === '/about-us' || pathname === '/contact-us' || pathname === '/impound-info') ? 'text-white':'text-black'}`}
             >{item}</Link>
           ))
         }

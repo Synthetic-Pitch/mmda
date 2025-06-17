@@ -26,7 +26,7 @@ const MdBody = () => {
                     className='w-full h-30 py-2 px-2 bg-[#C0C0C0] font-karantina text-3xl placeholder:text-[#8B8787] placeholder:text-4xl '/>
                 <button
                     onClick={handleSubmit} 
-                    className='flex items-center justify-center font-karantina text-2xl text-[#8B8787] cursor-pointer px-6'>send</button>
+                    className='flex items-center justify-center font-karantina text-4xl text-[#8B8787] cursor-pointer px-6'>send</button>
             </main>
             <footer className='flex flex-col items-center justify-center gap-2 pt-8 text-white'>
                 <h1 className='flex items-center gap-2'><FaLocationDot size={20}/>MARIKINA CITY</h1>
