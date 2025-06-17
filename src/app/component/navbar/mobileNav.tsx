@@ -16,6 +16,7 @@ const MobileNav = () => {
         ["home", "impound-info","about-us","faqs"],
         ["home", "about-us","contact-us","faqs"],
         ["home", "impound-info","contact-us","about-us"],
+        ["home", "impound-info","contact-us","about-us","faqs"],
     ];
     
     useEffect(()=>{
@@ -35,13 +36,16 @@ const MobileNav = () => {
             case "/faqs":
                 setIndex(4);
                 break;
+            case "/reclamation":
+                setIndex(5);
+                break;
         }
-    },[pathname])
+    },[pathname]);
 
     const handleClick = () => {
         isOpen(!open)
     }
-
+    
     return (
         <div className='absolute top-0 w-full h-12 z-50 flex items-center justify-end px-4'>
             <TiThMenu size={40} onClick={handleClick} className={`${open && 'scale-[.8]'} transition-transform duration-100`}/>

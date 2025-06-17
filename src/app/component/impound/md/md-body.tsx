@@ -3,7 +3,6 @@ import React from 'react';
 import img1 from '../../../../../public/assets/images/Rectangle 47.png'
 import { CiLocationOn } from "react-icons/ci";
 import img2 from '../../../../../public/assets/images/Rectangle 48.png'
-import img3 from '../../../../../public/assets/images/Rectangle 49.png'
 
 const MdBody = () => {
   return (
@@ -14,7 +13,6 @@ const MdBody = () => {
                 All vehicles that has been towed are placed in our impounding are in
                 Tumana Marikina City, Each day the MMDA conducted intensified road-clearing operations citing and towing approximately 100 vehicles in a single day
             </p>
-         
             <Image draggable={false} src={img1} alt='' width={300} height={300} className='rounded-2xl' style={{ boxShadow: '0px 0px 22px 9px #595656' }}/>
         </section>
         <p className='text-center text-white py-8'>base on the statistic of year 2024</p>

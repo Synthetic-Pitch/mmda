@@ -14,9 +14,7 @@ const Reclamation = () => {
         <header className="absolute top-[2%] right-[1%] h-[6vh] w-[5vw] ">
           <Menu/>
         </header>
-
         <main className="relative z-20 h-[90vh] w-[50vw] ml-[6vw] bg-[rgb(174,188,255)] flex flex-col shadow-[0px_2vh_2vw_rgb(0,0,0,.6)]" >
-
           <header className="h-[20%] w-full flex items-center gap-[4%] px-[6%] select-none">
             <Image src={img1} alt="" className="h-[8vw] w-[8vw]" draggable={false}/>
             <Image src={img2} alt="" className="h-[8vw] w-[8vw]" draggable={false}/>
@@ -53,7 +51,6 @@ const Reclamation = () => {
           <h1 className="text-[5vw] fo bg-[red]nt-poppins font-bold px-[6vw] select-none" draggable={false}>
             REQUIREMENTS TO PROCESS VEHICLE RECLAMATION
           </h1>
-
           <section className="flex flex-col px-[6vw] font-poppins gap-[2vw] mt-[4%] select-none ">
             <span className="text-[4vw]">valid government ID</span>
             <span className="text-[4vw]">Proof of Vehicle Ownership (CR & OR)</span>
@@ -65,7 +62,10 @@ const Reclamation = () => {
             <Link href={'/reclamation/1'} className="bg-[#D9D9D9] font-poly px-[4.6vw] py-[.6vw] text-[4.2vw] rounded-[20vw]">start submisssion</Link>
           </footer>
         </main>
-        
+      </section>
+
+      <section className="">
+         <MobileNav/>
       </section>
     </div>
   )
