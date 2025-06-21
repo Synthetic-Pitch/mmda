@@ -124,7 +124,7 @@ const XlTodaysCoding = () => {
                             {date}
                         </CardContent>
                         <CardContent
-                            className='flex justify-center text-5xl font-extrabold text-white'
+                            className='flex justify-center text-4xl font-extrabold text-white'
                         >
                             {day}
                         </CardContent>
