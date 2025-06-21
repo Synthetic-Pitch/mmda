@@ -8,7 +8,7 @@ const XlNavigation = () => {
     const dispatch = useDispatch();
     
     return (
-        <div className='bg-[#94A6FF] h-[20%]'>
+        <div className='bg-[#94A6FF] h-[20%] flex justify-center'>
             <main className='flex justify-evenly items-center h-full w-full max-w-[2000px]'>
                 <Link href="/reclamation"
                     className='w-[23%] h-[70%] bg-[#CECECE] rounded-xl flex items-center justify-center cursor-pointer hover:border-2 hover:border-white hover:text-xl transition-all shadow-[4px_4px_4px_rgba(0,0,0,.5)] select-none'>
